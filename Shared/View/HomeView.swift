@@ -14,7 +14,6 @@ struct HomeView: View {
 }
 
 private struct HomeContent: View {
-    
     @State private var searchText: String = ""
     
     var body: some View {
@@ -23,6 +22,7 @@ private struct HomeContent: View {
                 VStack {
                     // Header
                     VStack(alignment: .leading) {
+                        Spacer()
                         Group {
                             Text("Donuts")
                                 .font(.largeTitle)
@@ -32,8 +32,9 @@ private struct HomeContent: View {
                         .frame(maxWidth: .infinity,alignment: .leading)
                         .foregroundColor(Color.onAccent)
                         .padding(.horizontal, 24)
+                        Spacer()
                         
-                        // TODO: Search bar
+                        // Search bar
                         SearchBar(
                             placeholder: "Search all donuts",
                             text: $searchText
@@ -41,6 +42,7 @@ private struct HomeContent: View {
                         .padding(.horizontal, 24)
 
                     }
+                    .padding(.vertical, 24)
                     .frame(
                         maxWidth: .infinity,
                         maxHeight: metrics.size.height * 0.3
