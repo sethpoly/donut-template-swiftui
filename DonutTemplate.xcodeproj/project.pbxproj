@@ -13,14 +13,19 @@
 		BAB66535288F5C5F007FABE8 /* Tests_macOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB66534288F5C5F007FABE8 /* Tests_macOSLaunchTests.swift */; };
 		BAB66536288F5C5F007FABE8 /* DonutTemplateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB6650E288F5C56007FABE8 /* DonutTemplateApp.swift */; };
 		BAB66537288F5C5F007FABE8 /* DonutTemplateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB6650E288F5C56007FABE8 /* DonutTemplateApp.swift */; };
-		BAB66538288F5C5F007FABE8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB6650F288F5C56007FABE8 /* ContentView.swift */; };
-		BAB66539288F5C5F007FABE8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB6650F288F5C56007FABE8 /* ContentView.swift */; };
 		BAB6653A288F5C5F007FABE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAB66510288F5C5F007FABE8 /* Assets.xcassets */; };
 		BAB6653B288F5C5F007FABE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAB66510288F5C5F007FABE8 /* Assets.xcassets */; };
 		BAC0684C288F65ED00B9DC21 /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0684B288F65ED00B9DC21 /* ColorManager.swift */; };
 		BAC0684D288F65ED00B9DC21 /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0684B288F65ED00B9DC21 /* ColorManager.swift */; };
 		BAC0684F288F672D00B9DC21 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAC0684E288F672D00B9DC21 /* Color.xcassets */; };
 		BAC06850288F672D00B9DC21 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAC0684E288F672D00B9DC21 /* Color.xcassets */; };
+		BAC0685428900AE600B9DC21 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0685328900AE600B9DC21 /* HomeView.swift */; };
+		BAC0685628900E9F00B9DC21 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0685528900E9F00B9DC21 /* RoundedCorner.swift */; };
+		BAC0685728900E9F00B9DC21 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0685528900E9F00B9DC21 /* RoundedCorner.swift */; };
+		BAC0685A28900EC400B9DC21 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0685928900EC400B9DC21 /* View+Extension.swift */; };
+		BAC0685B28900EC400B9DC21 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0685928900EC400B9DC21 /* View+Extension.swift */; };
+		BAC0685D28900F0C00B9DC21 /* ShapeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0685C28900F0C00B9DC21 /* ShapeManager.swift */; };
+		BAC0685E28900F0C00B9DC21 /* ShapeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0685C28900F0C00B9DC21 /* ShapeManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +47,6 @@
 
 /* Begin PBXFileReference section */
 		BAB6650E288F5C56007FABE8 /* DonutTemplateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonutTemplateApp.swift; sourceTree = "<group>"; };
-		BAB6650F288F5C56007FABE8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BAB66510288F5C5F007FABE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BAB66515288F5C5F007FABE8 /* DonutTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DonutTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB6651B288F5C5F007FABE8 /* DonutTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DonutTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,6 +59,10 @@
 		BAB66534288F5C5F007FABE8 /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
 		BAC0684B288F65ED00B9DC21 /* ColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
 		BAC0684E288F672D00B9DC21 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
+		BAC0685328900AE600B9DC21 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		BAC0685528900E9F00B9DC21 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
+		BAC0685928900EC400B9DC21 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		BAC0685C28900F0C00B9DC21 /* ShapeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,9 +111,11 @@
 		BAB6650D288F5C56007FABE8 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				BAC0684A288F659500B9DC21 /* Resources */,
+				BAC0685828900EB100B9DC21 /* Extension */,
+				BAC0685228900AC100B9DC21 /* Component */,
+				BAC0685128900AB100B9DC21 /* View */,
+				BAC0684A288F659500B9DC21 /* Resource */,
 				BAB6650E288F5C56007FABE8 /* DonutTemplateApp.swift */,
-				BAB6650F288F5C56007FABE8 /* ContentView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -147,14 +157,39 @@
 			path = "Tests macOS";
 			sourceTree = "<group>";
 		};
-		BAC0684A288F659500B9DC21 /* Resources */ = {
+		BAC0684A288F659500B9DC21 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
 				BAC0684B288F65ED00B9DC21 /* ColorManager.swift */,
 				BAB66510288F5C5F007FABE8 /* Assets.xcassets */,
 				BAC0684E288F672D00B9DC21 /* Color.xcassets */,
+				BAC0685C28900F0C00B9DC21 /* ShapeManager.swift */,
 			);
-			path = Resources;
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		BAC0685128900AB100B9DC21 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BAC0685328900AE600B9DC21 /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BAC0685228900AC100B9DC21 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				BAC0685528900E9F00B9DC21 /* RoundedCorner.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		BAC0685828900EB100B9DC21 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				BAC0685928900EC400B9DC21 /* View+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,8 +352,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAC0685628900E9F00B9DC21 /* RoundedCorner.swift in Sources */,
 				BAC0684C288F65ED00B9DC21 /* ColorManager.swift in Sources */,
-				BAB66538288F5C5F007FABE8 /* ContentView.swift in Sources */,
+				BAC0685A28900EC400B9DC21 /* View+Extension.swift in Sources */,
+				BAC0685D28900F0C00B9DC21 /* ShapeManager.swift in Sources */,
+				BAC0685428900AE600B9DC21 /* HomeView.swift in Sources */,
 				BAB66536288F5C5F007FABE8 /* DonutTemplateApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -327,8 +365,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAC0685E28900F0C00B9DC21 /* ShapeManager.swift in Sources */,
+				BAC0685728900E9F00B9DC21 /* RoundedCorner.swift in Sources */,
 				BAC0684D288F65ED00B9DC21 /* ColorManager.swift in Sources */,
-				BAB66539288F5C5F007FABE8 /* ContentView.swift in Sources */,
+				BAC0685B28900EC400B9DC21 /* View+Extension.swift in Sources */,
 				BAB66537288F5C5F007FABE8 /* DonutTemplateApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

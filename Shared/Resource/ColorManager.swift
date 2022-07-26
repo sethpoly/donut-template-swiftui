@@ -9,9 +9,12 @@ import Foundation
 import SwiftUI
 
 extension Color {
+    static let accent = Color("accent")
     static let background = Color("background")
     static let foreground = Color("foreground")
     static let onBackground = Color("onBackground")
     static let onForeground = Color("onForeground")
+    static let onAccent = Color("onAccent")
     static let secondary = Color("secondary")
+    static let onBackgroundVariant = Color("subtitle")
 }
