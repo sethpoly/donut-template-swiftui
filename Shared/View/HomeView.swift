@@ -19,42 +19,53 @@ private struct HomeContent: View {
     var body: some View {
         GeometryReader { metrics in
             ZStack {
-                VStack {
-                    // Header
-                    VStack(alignment: .leading) {
-                        Spacer()
-                        Group {
-                            Text("Donuts")
-                                .font(.largeTitle)
-                            Text("Just the good stuff.")
-                                .font(.headline)
-                        }
-                        .frame(maxWidth: .infinity,alignment: .leading)
-                        .foregroundColor(Color.onAccent)
-                        .padding(.horizontal, 24)
-                        Spacer()
-                        
-                        // Search bar
-                        SearchBar(
-                            placeholder: "Search all donuts",
-                            text: $searchText
-                        )
-                        .padding(.horizontal, 24)
-
-                    }
-                    .padding(.vertical, 24)
-                    .frame(
-                        maxWidth: .infinity,
-                        maxHeight: metrics.size.height * 0.3
-                    )
-                    .background(Color.accent)
-                    .cornerRadius(CGFloat.large, corners: [.bottomLeft])
-                    
-                    Spacer()
-                }
+                HomeHeader(
+                    searchText: $searchText,
+                    height: metrics.size.height * 0.3
+                )
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.background)
+        }
+    }
+}
+
+private struct HomeHeader: View {
+    @Binding var searchText: String
+    let height: Double
+    var body: some View {
+        VStack {
+            // Header
+            VStack(alignment: .leading) {
+                Spacer()
+                Group {
+                    Text("Donuts")
+                        .font(.largeTitle)
+                    Text("Just the good stuff.")
+                        .font(.headline)
+                }
+                .frame(maxWidth: .infinity,alignment: .leading)
+                .foregroundColor(Color.onAccent)
+                .padding(.horizontal, 24)
+                Spacer()
+                
+                // Search bar
+                SearchBar(
+                    placeholder: "Search all donuts",
+                    text: $searchText
+                )
+                .padding(.horizontal, 24)
+
+            }
+            .padding(.vertical, 24)
+            .frame(
+                maxWidth: .infinity,
+                maxHeight: height
+            )
+            .background(Color.accent)
+            .cornerRadius(CGFloat.large, corners: [.bottomLeft])
+            
+            Spacer()
         }
     }
 }

@@ -117,6 +117,7 @@
 		BAB6650D288F5C56007FABE8 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				BAC0686528909F6500B9DC21 /* New Group */,
 				BAC0685828900EB100B9DC21 /* Extension */,
 				BAC0685228900AC100B9DC21 /* Component */,
 				BAC0685128900AB100B9DC21 /* View */,
@@ -198,6 +199,13 @@
 				BAC06862289019A700B9DC21 /* UIApplication+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		BAC0686528909F6500B9DC21 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
