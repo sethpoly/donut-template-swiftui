@@ -26,6 +26,10 @@
 		BAC0685B28900EC400B9DC21 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0685928900EC400B9DC21 /* View+Extension.swift */; };
 		BAC0685D28900F0C00B9DC21 /* ShapeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0685C28900F0C00B9DC21 /* ShapeManager.swift */; };
 		BAC0685E28900F0C00B9DC21 /* ShapeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0685C28900F0C00B9DC21 /* ShapeManager.swift */; };
+		BAC068602890171200B9DC21 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0685F2890171200B9DC21 /* SearchBar.swift */; };
+		BAC068612890171200B9DC21 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0685F2890171200B9DC21 /* SearchBar.swift */; };
+		BAC06863289019A800B9DC21 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC06862289019A700B9DC21 /* UIApplication+Extension.swift */; };
+		BAC06864289019A800B9DC21 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC06862289019A700B9DC21 /* UIApplication+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +67,8 @@
 		BAC0685528900E9F00B9DC21 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		BAC0685928900EC400B9DC21 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		BAC0685C28900F0C00B9DC21 /* ShapeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeManager.swift; sourceTree = "<group>"; };
+		BAC0685F2890171200B9DC21 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		BAC06862289019A700B9DC21 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				BAC0685528900E9F00B9DC21 /* RoundedCorner.swift */,
+				BAC0685F2890171200B9DC21 /* SearchBar.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -188,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				BAC0685928900EC400B9DC21 /* View+Extension.swift */,
+				BAC06862289019A700B9DC21 /* UIApplication+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -352,7 +360,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAC068602890171200B9DC21 /* SearchBar.swift in Sources */,
 				BAC0685628900E9F00B9DC21 /* RoundedCorner.swift in Sources */,
+				BAC06863289019A800B9DC21 /* UIApplication+Extension.swift in Sources */,
 				BAC0684C288F65ED00B9DC21 /* ColorManager.swift in Sources */,
 				BAC0685A28900EC400B9DC21 /* View+Extension.swift in Sources */,
 				BAC0685D28900F0C00B9DC21 /* ShapeManager.swift in Sources */,
@@ -370,6 +380,8 @@
 				BAC0684D288F65ED00B9DC21 /* ColorManager.swift in Sources */,
 				BAC0685B28900EC400B9DC21 /* View+Extension.swift in Sources */,
 				BAB66537288F5C5F007FABE8 /* DonutTemplateApp.swift in Sources */,
+				BAC068612890171200B9DC21 /* SearchBar.swift in Sources */,
+				BAC06864289019A800B9DC21 /* UIApplication+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

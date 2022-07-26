@@ -14,6 +14,9 @@ struct HomeView: View {
 }
 
 private struct HomeContent: View {
+    
+    @State private var searchText: String = ""
+    
     var body: some View {
         GeometryReader { metrics in
             ZStack {
@@ -28,9 +31,15 @@ private struct HomeContent: View {
                         }
                         .frame(maxWidth: .infinity,alignment: .leading)
                         .foregroundColor(Color.onAccent)
-                        .padding(.leading, 24)
+                        .padding(.horizontal, 24)
                         
                         // TODO: Search bar
+                        SearchBar(
+                            placeholder: "Search all donuts",
+                            text: $searchText
+                        )
+                        .padding(.horizontal, 24)
+
                     }
                     .frame(
                         maxWidth: .infinity,
