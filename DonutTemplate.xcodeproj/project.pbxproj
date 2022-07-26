@@ -17,6 +17,10 @@
 		BAB66539288F5C5F007FABE8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB6650F288F5C56007FABE8 /* ContentView.swift */; };
 		BAB6653A288F5C5F007FABE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAB66510288F5C5F007FABE8 /* Assets.xcassets */; };
 		BAB6653B288F5C5F007FABE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAB66510288F5C5F007FABE8 /* Assets.xcassets */; };
+		BAC0684C288F65ED00B9DC21 /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0684B288F65ED00B9DC21 /* ColorManager.swift */; };
+		BAC0684D288F65ED00B9DC21 /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0684B288F65ED00B9DC21 /* ColorManager.swift */; };
+		BAC0684F288F672D00B9DC21 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAC0684E288F672D00B9DC21 /* Color.xcassets */; };
+		BAC06850288F672D00B9DC21 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAC0684E288F672D00B9DC21 /* Color.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,8 @@
 		BAB6652E288F5C5F007FABE8 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB66532288F5C5F007FABE8 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		BAB66534288F5C5F007FABE8 /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
+		BAC0684B288F65ED00B9DC21 /* ColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
+		BAC0684E288F672D00B9DC21 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +103,9 @@
 		BAB6650D288F5C56007FABE8 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				BAC0684A288F659500B9DC21 /* Resources */,
 				BAB6650E288F5C56007FABE8 /* DonutTemplateApp.swift */,
 				BAB6650F288F5C56007FABE8 /* ContentView.swift */,
-				BAB66510288F5C5F007FABE8 /* Assets.xcassets */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -139,6 +145,16 @@
 				BAB66534288F5C5F007FABE8 /* Tests_macOSLaunchTests.swift */,
 			);
 			path = "Tests macOS";
+			sourceTree = "<group>";
+		};
+		BAC0684A288F659500B9DC21 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BAC0684B288F65ED00B9DC21 /* ColorManager.swift */,
+				BAB66510288F5C5F007FABE8 /* Assets.xcassets */,
+				BAC0684E288F672D00B9DC21 /* Color.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAB6653A288F5C5F007FABE8 /* Assets.xcassets in Resources */,
+				BAC0684F288F672D00B9DC21 /* Color.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAB6653B288F5C5F007FABE8 /* Assets.xcassets in Resources */,
+				BAC06850288F672D00B9DC21 /* Color.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +317,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAC0684C288F65ED00B9DC21 /* ColorManager.swift in Sources */,
 				BAB66538288F5C5F007FABE8 /* ContentView.swift in Sources */,
 				BAB66536288F5C5F007FABE8 /* DonutTemplateApp.swift in Sources */,
 			);
@@ -308,6 +327,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAC0684D288F65ED00B9DC21 /* ColorManager.swift in Sources */,
 				BAB66539288F5C5F007FABE8 /* ContentView.swift in Sources */,
 				BAB66537288F5C5F007FABE8 /* DonutTemplateApp.swift in Sources */,
 			);
