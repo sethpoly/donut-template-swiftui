@@ -30,6 +30,10 @@
 		BAC068612890171200B9DC21 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0685F2890171200B9DC21 /* SearchBar.swift */; };
 		BAC06863289019A800B9DC21 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC06862289019A700B9DC21 /* UIApplication+Extension.swift */; };
 		BAC06864289019A800B9DC21 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC06862289019A700B9DC21 /* UIApplication+Extension.swift */; };
+		BAC068672890A12C00B9DC21 /* FilterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC068662890A12C00B9DC21 /* FilterType.swift */; };
+		BAC068682890A12C00B9DC21 /* FilterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC068662890A12C00B9DC21 /* FilterType.swift */; };
+		BAC0686A2890A2C300B9DC21 /* SegmentedPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC068692890A2C300B9DC21 /* SegmentedPicker.swift */; };
+		BAC0686B2890A2C300B9DC21 /* SegmentedPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC068692890A2C300B9DC21 /* SegmentedPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +73,8 @@
 		BAC0685C28900F0C00B9DC21 /* ShapeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeManager.swift; sourceTree = "<group>"; };
 		BAC0685F2890171200B9DC21 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		BAC06862289019A700B9DC21 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		BAC068662890A12C00B9DC21 /* FilterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterType.swift; sourceTree = "<group>"; };
+		BAC068692890A2C300B9DC21 /* SegmentedPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +123,7 @@
 		BAB6650D288F5C56007FABE8 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				BAC0686528909F6500B9DC21 /* New Group */,
+				BAC0686528909F6500B9DC21 /* Model */,
 				BAC0685828900EB100B9DC21 /* Extension */,
 				BAC0685228900AC100B9DC21 /* Component */,
 				BAC0685128900AB100B9DC21 /* View */,
@@ -188,6 +194,7 @@
 			children = (
 				BAC0685528900E9F00B9DC21 /* RoundedCorner.swift */,
 				BAC0685F2890171200B9DC21 /* SearchBar.swift */,
+				BAC068692890A2C300B9DC21 /* SegmentedPicker.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -201,11 +208,12 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		BAC0686528909F6500B9DC21 /* New Group */ = {
+		BAC0686528909F6500B9DC21 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BAC068662890A12C00B9DC21 /* FilterType.swift */,
 			);
-			path = "New Group";
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,10 +380,12 @@
 				BAC0685628900E9F00B9DC21 /* RoundedCorner.swift in Sources */,
 				BAC06863289019A800B9DC21 /* UIApplication+Extension.swift in Sources */,
 				BAC0684C288F65ED00B9DC21 /* ColorManager.swift in Sources */,
+				BAC0686A2890A2C300B9DC21 /* SegmentedPicker.swift in Sources */,
 				BAC0685A28900EC400B9DC21 /* View+Extension.swift in Sources */,
 				BAC0685D28900F0C00B9DC21 /* ShapeManager.swift in Sources */,
 				BAC0685428900AE600B9DC21 /* HomeView.swift in Sources */,
 				BAB66536288F5C5F007FABE8 /* DonutTemplateApp.swift in Sources */,
+				BAC068672890A12C00B9DC21 /* FilterType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +396,8 @@
 				BAC0685E28900F0C00B9DC21 /* ShapeManager.swift in Sources */,
 				BAC0685728900E9F00B9DC21 /* RoundedCorner.swift in Sources */,
 				BAC0684D288F65ED00B9DC21 /* ColorManager.swift in Sources */,
+				BAC0686B2890A2C300B9DC21 /* SegmentedPicker.swift in Sources */,
+				BAC068682890A12C00B9DC21 /* FilterType.swift in Sources */,
 				BAC0685B28900EC400B9DC21 /* View+Extension.swift in Sources */,
 				BAB66537288F5C5F007FABE8 /* DonutTemplateApp.swift in Sources */,
 				BAC068612890171200B9DC21 /* SearchBar.swift in Sources */,

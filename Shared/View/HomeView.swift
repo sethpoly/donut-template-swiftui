@@ -15,14 +15,24 @@ struct HomeView: View {
 
 private struct HomeContent: View {
     @State private var searchText: String = ""
+    @State private var filter = FilterType.all.rawValue
     
     var body: some View {
         GeometryReader { metrics in
             ZStack {
-                HomeHeader(
-                    searchText: $searchText,
-                    height: metrics.size.height * 0.3
-                )
+                VStack {
+                    // Header & Search
+                    HomeHeader(
+                        searchText: $searchText,
+                        height: metrics.size.height * 0.3
+                    )
+                    
+                    // TODO: Filter cards
+                    CustomSegmentedPickerView(
+                        selection: $filter,
+                        titles: FilterType.allCases.map {$0.description})
+                    Spacer()
+                }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.background)
@@ -64,8 +74,6 @@ private struct HomeHeader: View {
             )
             .background(Color.accent)
             .cornerRadius(CGFloat.large, corners: [.bottomLeft])
-            
-            Spacer()
         }
     }
 }
