@@ -27,12 +27,32 @@ private struct HomeContent: View {
                         height: metrics.size.height * 0.3
                     )
                     
-                    // TODO: Filter cards
-                    CustomSegmentedPickerView(
+                    // Filter cards
+                    SegmentedPicker(
                         selection: $filter,
                         titles: FilterType.allCases.map {$0.description}
                     )
                     .padding(.horizontal, 8)
+                    
+                    let data = (1...8).map { "Item \($0)" }
+                    let columns = [
+                        GridItem(.flexible()),
+                        GridItem(.flexible())
+                    ]
+
+                    
+                    
+                    // TODO: Donut cards
+                    ScrollView {
+                        LazyVGrid(columns: columns, spacing: 20) {
+                            ForEach(data, id: \.self) { item in
+                                ItemCard()
+                                    //.padding(12)
+                            }
+                        }
+                        .padding(.horizontal)
+                    }
+                    
                     Spacer()
                 }
             }
@@ -77,6 +97,44 @@ private struct HomeHeader: View {
             .background(Color.accent)
             .cornerRadius(CGFloat.large, corners: [.bottomLeft])
         }
+    }
+}
+
+private struct ItemCard: View {
+    var body: some View {
+        VStack(alignment: .leading) {
+            // TODO: Color: image background
+            ZStack{
+                Color.secondaryColor
+                    .cornerRadius(CGFloat.medium)
+                // TODO: Image: item
+                Image("donutStrawberry")
+            }
+            .padding(6)
+            
+            // TODO: Text: Item title
+            Text("Some Item Name")
+            .padding(.horizontal, 6)
+            
+            HStack {
+                // TODO: Text: Item price
+                Text("$0.00")
+                
+                Spacer()
+                
+                // TODO: Button: add
+                Button(action: {
+                    // TODO:
+                }) {
+                    Text("Button")
+                }
+            }
+            .padding([.horizontal, .bottom], 6)
+            .padding(.top, 2)
+        }
+        .background(Color.foreground)
+        .cornerRadius(CGFloat.medium)
+        .shadow(color: .gray, radius: 3, x: -2, y: 2)
     }
 }
 

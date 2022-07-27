@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CustomSegmentedPickerView: View {
+struct SegmentedPicker: View {
     @Binding var selection: Int
     let titles: [String]
     let selectedBackgroundColor: Color = Color.accent
