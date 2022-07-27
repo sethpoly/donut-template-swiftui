@@ -13,7 +13,6 @@ struct CustomSegmentedPickerView: View {
     let selectedBackgroundColor: Color = Color.accent
     let selectedTextColor: Color = Color.onAccent
     let textColor: Color = Color.onBackground
-    @State private var frames = Array<CGRect>(repeating: .zero, count: 4)
     
     var body: some View {
         VStack {
@@ -38,9 +37,5 @@ struct CustomSegmentedPickerView: View {
                 }
             }
         }
-    }
-    
-    func setFrame(index: Int, frame: CGRect) {
-        self.frames[index] = frame
     }
 }
