@@ -30,7 +30,9 @@ private struct HomeContent: View {
                     // TODO: Filter cards
                     CustomSegmentedPickerView(
                         selection: $filter,
-                        titles: FilterType.allCases.map {$0.description})
+                        titles: FilterType.allCases.map {$0.description}
+                    )
+                    .padding(.horizontal, 24)
                     Spacer()
                 }
             }

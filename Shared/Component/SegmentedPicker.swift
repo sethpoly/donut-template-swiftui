@@ -18,28 +18,25 @@ struct CustomSegmentedPickerView: View {
     var body: some View {
         VStack {
             ZStack {
-                HStack(spacing: 10) {
-                    ForEach(self.titles.indices, id: \.self) { index in
-                        Button(action: { self.selection = index }) {
-                            Text(self.titles[index])
-                                .foregroundColor(self.selection == index ? selectedTextColor: textColor)
-                        }.padding(EdgeInsets(top: 16, leading: 20, bottom: 16, trailing: 20)).background(
-                            GeometryReader { geo in
-                                Color.clear.onAppear { self.setFrame(index: index, frame: geo.frame(in: .global)) }
+                ScrollView(.horizontal) {
+                    HStack(spacing: 12) {
+                        ForEach(self.titles.indices, id: \.self) { index in
+                            Button(action: { self.selection = index }) {
+                                Text(self.titles[index])
+                                    .foregroundColor(selection == index ? selectedTextColor: textColor)
+                                    .lineLimit(1)
+                                    .animation(.default, value: selection)
                             }
-                        )
+                            .padding(EdgeInsets(top: 12, leading: 16, bottom: 12, trailing: 16))
+                            .background(
+                                Capsule()
+                                    .fill(self.selection == index ? selectedBackgroundColor : Color.clear)
+                                    .animation(.default, value: selection)
+                            )
+                        }
                     }
                 }
-                .background(
-                    Capsule().fill(
-                        selectedBackgroundColor)
-                        .frame(width: self.frames[self.selection].width,
-                               height: self.frames[self.selection].height, alignment: .topLeading)
-                        .offset(x: self.frames[self.selection].minX - self.frames[0].minX)
-                    , alignment: .leading
-                )
             }
-            .animation(.default, value: selection)
         }
     }
     
