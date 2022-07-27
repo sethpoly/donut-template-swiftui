@@ -110,15 +110,19 @@ private struct ItemCard: View {
                 // TODO: Image: item
                 Image("donutStrawberry")
             }
-            .padding(6)
+            .padding([.horizontal, .top] , 8)
             
             // TODO: Text: Item title
             Text("Some Item Name")
-            .padding(.horizontal, 6)
+                .foregroundColor(Color.onForeground)
+                .fontWeight(.bold)
+            .padding(.horizontal, 8)
             
             HStack {
                 // TODO: Text: Item price
                 Text("$0.00")
+                    .foregroundColor(Color.onBackgroundVariant)
+                    .fontWeight(.bold)
                 
                 Spacer()
                 
@@ -126,11 +130,14 @@ private struct ItemCard: View {
                 Button(action: {
                     // TODO:
                 }) {
-                    Text("Button")
+                    Image(systemName: "plus.circle.fill")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(maxWidth: 32, maxHeight: 32)
+                        .foregroundColor(Color.accent)
                 }
             }
-            .padding([.horizontal, .bottom], 6)
-            .padding(.top, 2)
+            .padding([.horizontal, .bottom], 8)
         }
         .background(Color.foreground)
         .cornerRadius(CGFloat.medium)
