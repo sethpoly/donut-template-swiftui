@@ -32,7 +32,7 @@ private struct HomeContent: View {
                         selection: $filter,
                         titles: FilterType.allCases.map {$0.description}
                     )
-                    .padding(.horizontal, 24)
+                    .padding(.horizontal, 8)
                     Spacer()
                 }
             }
