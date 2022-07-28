@@ -34,20 +34,21 @@ private struct HomeContent: View {
                     )
                     .padding(.horizontal, 8)
                     
-                    let data = (1...8).map { "Item \($0)" }
+                    let data = (1...8).map {
+                        Donut(name: "Some Donut", price: "$\($0).00", imageName: "donutStrawberry")
+                    }
+                    
                     let columns = [
                         GridItem(.flexible()),
                         GridItem(.flexible())
                     ]
 
                     
-                    
-                    // TODO: Donut cards
+                    // Donut card list
                     ScrollView {
                         LazyVGrid(columns: columns, spacing: 20) {
-                            ForEach(data, id: \.self) { item in
-                                ItemCard()
-                                    //.padding(12)
+                            ForEach(data, id: \.id) { item in
+                                ItemCard(donut: item)
                             }
                         }
                         .padding(.horizontal)
@@ -101,32 +102,33 @@ private struct HomeHeader: View {
 }
 
 private struct ItemCard: View {
+    let donut: Donut
     var body: some View {
         VStack(alignment: .leading) {
-            // TODO: Color: image background
+            // Image + background
             ZStack{
                 Color.secondaryColor
                     .cornerRadius(CGFloat.medium)
-                // TODO: Image: item
-                Image("donutStrawberry")
+                // Image
+                Image(donut.imageName)
             }
             .padding([.horizontal, .top] , 8)
             
-            // TODO: Text: Item title
-            Text("Some Item Name")
+            // Item title
+            Text(donut.name)
                 .foregroundColor(Color.onForeground)
                 .fontWeight(.bold)
             .padding(.horizontal, 8)
             
             HStack {
-                // TODO: Text: Item price
-                Text("$0.00")
+                // Item price
+                Text(donut.price)
                     .foregroundColor(Color.onBackgroundVariant)
                     .fontWeight(.bold)
                 
                 Spacer()
                 
-                // TODO: Button: add
+                // Button: add
                 Button(action: {
                     // TODO:
                 }) {

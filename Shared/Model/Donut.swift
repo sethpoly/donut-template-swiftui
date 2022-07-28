@@ -8,7 +8,8 @@
 import Foundation
 import UIKit
 
-struct Donut {
+struct Donut: Identifiable {
+    let id = UUID().uuidString
     let name: String
     let price: String
     let imageName: String
