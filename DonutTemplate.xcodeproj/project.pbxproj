@@ -36,6 +36,8 @@
 		BAC0686B2890A2C300B9DC21 /* SegmentedPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC068692890A2C300B9DC21 /* SegmentedPicker.swift */; };
 		BAC0686D28916CD100B9DC21 /* Donut.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0686C28916CD100B9DC21 /* Donut.swift */; };
 		BAC0686E28916CD100B9DC21 /* Donut.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0686C28916CD100B9DC21 /* Donut.swift */; };
+		BAC068702892B3A000B9DC21 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0686F2892B3A000B9DC21 /* HomeViewModel.swift */; };
+		BAC068712892B3A000B9DC21 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0686F2892B3A000B9DC21 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +80,7 @@
 		BAC068662890A12C00B9DC21 /* FilterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterType.swift; sourceTree = "<group>"; };
 		BAC068692890A2C300B9DC21 /* SegmentedPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedPicker.swift; sourceTree = "<group>"; };
 		BAC0686C28916CD100B9DC21 /* Donut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Donut.swift; sourceTree = "<group>"; };
+		BAC0686F2892B3A000B9DC21 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +135,7 @@
 				BAC0685128900AB100B9DC21 /* View */,
 				BAC0684A288F659500B9DC21 /* Resource */,
 				BAB6650E288F5C56007FABE8 /* DonutTemplateApp.swift */,
+				BAC0686F2892B3A000B9DC21 /* HomeViewModel.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -387,6 +391,7 @@
 				BAC0684C288F65ED00B9DC21 /* ColorManager.swift in Sources */,
 				BAC0686A2890A2C300B9DC21 /* SegmentedPicker.swift in Sources */,
 				BAC0685A28900EC400B9DC21 /* View+Extension.swift in Sources */,
+				BAC068702892B3A000B9DC21 /* HomeViewModel.swift in Sources */,
 				BAC0685D28900F0C00B9DC21 /* ShapeManager.swift in Sources */,
 				BAC0685428900AE600B9DC21 /* HomeView.swift in Sources */,
 				BAB66536288F5C5F007FABE8 /* DonutTemplateApp.swift in Sources */,
@@ -399,6 +404,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAC0685E28900F0C00B9DC21 /* ShapeManager.swift in Sources */,
+				BAC068712892B3A000B9DC21 /* HomeViewModel.swift in Sources */,
 				BAC0685728900E9F00B9DC21 /* RoundedCorner.swift in Sources */,
 				BAC0686E28916CD100B9DC21 /* Donut.swift in Sources */,
 				BAC0684D288F65ED00B9DC21 /* ColorManager.swift in Sources */,
