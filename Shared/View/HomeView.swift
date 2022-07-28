@@ -8,14 +8,21 @@
 import SwiftUI
 
 struct HomeView: View {
+    @ObservedObject private var homeViewModel = HomeViewModel()
     var body: some View {
-        HomeContent()
+        HomeContent(homeViewModel: homeViewModel)
     }
 }
 
 private struct HomeContent: View {
+    let homeViewModel: HomeViewModel
     @State private var searchText: String = ""
     @State private var filter = FilterType.all.rawValue
+    
+    let columns = [
+        GridItem(.flexible()),
+        GridItem(.flexible())
+    ]
     
     var body: some View {
         GeometryReader { metrics in
@@ -34,25 +41,20 @@ private struct HomeContent: View {
                     )
                     .padding(.horizontal, 8)
                     
-                    let data = (1...8).map { "Item \($0)" }
-                    let columns = [
-                        GridItem(.flexible()),
-                        GridItem(.flexible())
-                    ]
-
-                    
-                    
-                    // TODO: Donut cards
+                    // Donut card list
                     ScrollView {
                         LazyVGrid(columns: columns, spacing: 20) {
-                            ForEach(data, id: \.self) { item in
-                                ItemCard()
-                                    //.padding(12)
+                            ForEach(homeViewModel.donuts, id: \.id) { item in
+                                ItemCard(
+                                    donut: item,
+                                    onAddClick: {
+                                        homeViewModel.addToCart(itemId: $0)
+                                    }
+                                )
                             }
                         }
                         .padding(.horizontal)
                     }
-                    
                     Spacer()
                 }
             }
@@ -101,35 +103,35 @@ private struct HomeHeader: View {
 }
 
 private struct ItemCard: View {
+    let donut: Donut
+    let onAddClick: (String) -> Void
     var body: some View {
         VStack(alignment: .leading) {
-            // TODO: Color: image background
+            // Image + background
             ZStack{
                 Color.secondaryColor
                     .cornerRadius(CGFloat.medium)
-                // TODO: Image: item
-                Image("donutStrawberry")
+                // Image
+                Image(donut.imageName)
             }
             .padding([.horizontal, .top] , 8)
             
-            // TODO: Text: Item title
-            Text("Some Item Name")
+            // Item title
+            Text(donut.name)
                 .foregroundColor(Color.onForeground)
                 .fontWeight(.bold)
             .padding(.horizontal, 8)
             
             HStack {
-                // TODO: Text: Item price
-                Text("$0.00")
+                // Item price
+                Text(donut.price)
                     .foregroundColor(Color.onBackgroundVariant)
                     .fontWeight(.bold)
                 
                 Spacer()
                 
-                // TODO: Button: add
-                Button(action: {
-                    // TODO:
-                }) {
+                // Button: add
+                Button(action: { onAddClick(donut.id) }) {
                     Image(systemName: "plus.circle.fill")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
@@ -148,6 +150,6 @@ private struct ItemCard: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeContent()
+        HomeContent(homeViewModel: HomeViewModel())
     }
 }
