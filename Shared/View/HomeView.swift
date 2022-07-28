@@ -10,12 +10,18 @@ import SwiftUI
 struct HomeView: View {
     @ObservedObject private var homeViewModel = HomeViewModel()
     var body: some View {
-        HomeContent(homeViewModel: homeViewModel)
+        HomeContent(
+            donuts: homeViewModel.donuts,
+            onAddToCart: {
+                homeViewModel.addToCart(itemId: $0)
+            }
+        )
     }
 }
 
 private struct HomeContent: View {
-    let homeViewModel: HomeViewModel
+    let donuts: [Donut]
+    let onAddToCart: (String) -> Void
     @State private var searchText: String = ""
     @State private var filter = FilterType.all.rawValue
     
@@ -44,11 +50,11 @@ private struct HomeContent: View {
                     // Donut card list
                     ScrollView {
                         LazyVGrid(columns: columns, spacing: 20) {
-                            ForEach(homeViewModel.donuts, id: \.id) { item in
+                            ForEach(donuts, id: \.id) { item in
                                 ItemCard(
                                     donut: item,
                                     onAddClick: {
-                                        homeViewModel.addToCart(itemId: $0)
+                                        onAddToCart($0)
                                     }
                                 )
                             }
@@ -150,6 +156,15 @@ private struct ItemCard: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeContent(homeViewModel: HomeViewModel())
+        HomeContent(
+            donuts: [
+                Donut(name: "Strawberry", price: "$2.00", imageName: "donutStrawberry"),
+                Donut(name: "Strawberry", price: "$2.00", imageName: "donutStrawberry"),
+                Donut(name: "Strawberry", price: "$2.00", imageName: "donutStrawberry"),
+                Donut(name: "Strawberry", price: "$2.00", imageName: "donutStrawberry"),
+                Donut(name: "Strawberry", price: "$2.00", imageName: "donutStrawberry")
+            ],
+            onAddToCart: { _ in }
+        )
     }
 }
