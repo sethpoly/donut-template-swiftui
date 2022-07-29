@@ -84,8 +84,9 @@ private struct HomeHeader: View {
                 Group {
                     Text("Donuts")
                         .font(.largeTitle)
+                        .fontWeight(.bold)
                     Text("Just the good stuff.")
-                        .font(.headline)
+                        .font(.title2)
                 }
                 .frame(maxWidth: .infinity,alignment: .leading)
                 .foregroundColor(Color.onAccent)

@@ -9,11 +9,12 @@ import SwiftUI
 
 struct DonutDetailView: View {
     var body: some View {
-        DonutDetailContent()
+        DonutDetailContent(donut: Donut(name: "", price: "", imageName: ""))
     }
 }
 
 private struct DonutDetailContent: View {
+    let donut: Donut
     var body: some View {
         ZStack {
             GeometryReader { metrics in
@@ -23,7 +24,7 @@ private struct DonutDetailContent: View {
                     
                     // TODO: Image - donut
                     ZStack {
-                        Image("donutStrawberry")
+                        Image(donut.imageName)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -32,16 +33,28 @@ private struct DonutDetailContent: View {
                     .frame(maxWidth: .infinity, maxHeight: metrics.size.height * 0.45)
                     
                     // TODO: VStack - bottom sheet
-                    VStack {
-                        // TODO: ->
+                    VStack(alignment: .leading, spacing: 8) {
                         // Item title
-                        Text("Donut Name")
+                        Text(donut.name)
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .foregroundColor(Color.onBackground)
+                        
                         // Item price
-                        Text("$2.00")
-                        // Row of additional info
-                        HStack {
-                            Text("Cal")
-                            Text("Stars")
+                        Text(donut.price)
+                            .font(.title2)
+                            .foregroundColor(Color.onBackground)
+                        
+                        // Additional info
+                        HStack(spacing: 24) {
+                            ForEach(donut.additionalInfoEntries, id: \.id) { item in
+                                HStack(spacing: 2) {
+                                    Image(systemName: item.type.imageName)
+                                    Text(item.value.description)
+                                    Text(item.type.description)
+                                }
+                                .foregroundColor(Color.accent)
+                            }
                         }
                         // Description header
                         Text("Description")
@@ -65,11 +78,10 @@ private struct DonutDetailContent: View {
                                 Text("Add To Cart")
                             }
                         }
-                        
-                        
-                        
+                        Spacer()
                     }
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .padding(24)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                     .background(Color.background)
                     .cornerRadius(CGFloat.large, corners: [.topLeft, .topRight])
                     .ignoresSafeArea(.all, edges: .bottom)
@@ -82,7 +94,17 @@ private struct DonutDetailContent: View {
 }
 
 struct PreviewDonutDetail: PreviewProvider {
+    static let donut = Donut(
+        name: "Strawberry Frosted",
+        price: "$2.00",
+        imageName: ImageManager.imageDonutStrawberry,
+        additionalInfoEntries: [
+            AdditionalInfoEntry(type: .stars, value: 4.3),
+            AdditionalInfoEntry(type: .calories, value: 349)
+        ]
+    )
+    
     static var previews: some View {
-        DonutDetailContent()
+        DonutDetailContent(donut: donut)
     }
 }

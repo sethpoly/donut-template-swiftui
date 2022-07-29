@@ -12,4 +12,5 @@ struct Donut: Identifiable {
     let name: String
     let price: String
     let imageName: String
+    var additionalInfoEntries: [AdditionalInfoEntry] = []
 }
