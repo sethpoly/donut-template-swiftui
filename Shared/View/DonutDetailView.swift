@@ -34,6 +34,40 @@ private struct DonutDetailContent: View {
                     // TODO: VStack - bottom sheet
                     VStack {
                         // TODO: ->
+                        // Item title
+                        Text("Donut Name")
+                        // Item price
+                        Text("$2.00")
+                        // Row of additional info
+                        HStack {
+                            Text("Cal")
+                            Text("Stars")
+                        }
+                        // Description header
+                        Text("Description")
+                        // Description body
+                        Text("Description body")
+                        // Ingredients header
+                        Text("Ingredients")
+                        // Ingredients cards
+                        HStack {
+                            Text("ing1")
+                            Text("ing2")
+                            Text("ing3")
+                        }
+                        HStack {
+                            // Quantity
+                            Button(action: {}) {
+                                Text("Quantity")
+                            }
+                            // Add to cart
+                            Button(action: {}) {
+                                Text("Add To Cart")
+                            }
+                        }
+                        
+                        
+                        
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .background(Color.background)
