@@ -10,12 +10,18 @@ import SwiftUI
 struct HomeView: View {
     @ObservedObject private var homeViewModel = HomeViewModel()
     var body: some View {
-        HomeContent(homeViewModel: homeViewModel)
+        HomeContent(
+            donuts: homeViewModel.donuts,
+            onAddToCart: {
+                homeViewModel.addToCart(itemId: $0)
+            }
+        )
     }
 }
 
 private struct HomeContent: View {
-    let homeViewModel: HomeViewModel
+    let donuts: [Donut]
+    let onAddToCart: (String) -> Void
     @State private var searchText: String = ""
     @State private var filter = FilterType.all.rawValue
     
@@ -30,8 +36,11 @@ private struct HomeContent: View {
                 VStack {
                     // Header & Search
                     HomeHeader(
-                        searchText: $searchText,
-                        height: metrics.size.height * 0.3
+                        searchText: $searchText
+                    )
+                    .frame(
+                        maxWidth: .infinity,
+                        maxHeight: metrics.size.height * 0.3
                     )
                     
                     // Filter cards
@@ -44,11 +53,11 @@ private struct HomeContent: View {
                     // Donut card list
                     ScrollView {
                         LazyVGrid(columns: columns, spacing: 20) {
-                            ForEach(homeViewModel.donuts, id: \.id) { item in
+                            ForEach(donuts, id: \.id) { item in
                                 ItemCard(
                                     donut: item,
                                     onAddClick: {
-                                        homeViewModel.addToCart(itemId: $0)
+                                        onAddToCart($0)
                                     }
                                 )
                             }
@@ -60,13 +69,13 @@ private struct HomeContent: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.background)
+            .ignoresSafeArea(.all, edges: .bottom)
         }
     }
 }
 
 private struct HomeHeader: View {
     @Binding var searchText: String
-    let height: Double
     var body: some View {
         VStack {
             // Header
@@ -75,8 +84,9 @@ private struct HomeHeader: View {
                 Group {
                     Text("Donuts")
                         .font(.largeTitle)
+                        .fontWeight(.bold)
                     Text("Just the good stuff.")
-                        .font(.headline)
+                        .font(.title2)
                 }
                 .frame(maxWidth: .infinity,alignment: .leading)
                 .foregroundColor(Color.onAccent)
@@ -92,12 +102,9 @@ private struct HomeHeader: View {
 
             }
             .padding(.vertical, 24)
-            .frame(
-                maxWidth: .infinity,
-                maxHeight: height
-            )
             .background(Color.accent)
             .cornerRadius(CGFloat.large, corners: [.bottomLeft])
+            .ignoresSafeArea(.all, edges: .top)
         }
     }
 }
@@ -150,6 +157,15 @@ private struct ItemCard: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeContent(homeViewModel: HomeViewModel())
+        HomeContent(
+            donuts: [
+                Donut(name: "Strawberry", price: "$2.00", imageName: "donutStrawberry"),
+                Donut(name: "Strawberry", price: "$2.00", imageName: "donutStrawberry"),
+                Donut(name: "Strawberry", price: "$2.00", imageName: "donutStrawberry"),
+                Donut(name: "Strawberry", price: "$2.00", imageName: "donutStrawberry"),
+                Donut(name: "Strawberry", price: "$2.00", imageName: "donutStrawberry")
+            ],
+            onAddToCart: { _ in }
+        )
     }
 }

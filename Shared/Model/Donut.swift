@@ -6,11 +6,11 @@
 //
 
 import Foundation
-import UIKit
 
 struct Donut: Identifiable {
     let id = UUID().uuidString
     let name: String
     let price: String
     let imageName: String
+    var additionalInfoEntries: [AdditionalInfoEntry] = []
 }

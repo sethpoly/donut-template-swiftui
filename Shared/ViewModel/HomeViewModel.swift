@@ -20,7 +20,7 @@ class HomeViewModel: ObservableObject {
     /// Add specified item to Cart
     /// - Parameter itemId: the UUID String of the item to add
     func addToCart(itemId: String) {
-        // TODO: 
+        // TODO:
         print("Adding item to cart: \(itemId)!")
     }
 }

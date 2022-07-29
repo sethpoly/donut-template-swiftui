@@ -8,10 +8,10 @@
 import Foundation
 
 enum FilterType: Int, CaseIterable {
-    case all = 0
-    case favorites = 1
-    case chocolate = 2
-    case jelly = 3
+    case all
+    case favorites
+    case chocolate
+    case jelly 
     
     var description: String {
         switch self {
