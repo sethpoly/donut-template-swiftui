@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import UIKit
 
 struct Donut: Identifiable {
     let id = UUID().uuidString
