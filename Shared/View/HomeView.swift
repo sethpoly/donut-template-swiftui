@@ -36,8 +36,11 @@ private struct HomeContent: View {
                 VStack {
                     // Header & Search
                     HomeHeader(
-                        searchText: $searchText,
-                        height: metrics.size.height * 0.3
+                        searchText: $searchText
+                    )
+                    .frame(
+                        maxWidth: .infinity,
+                        maxHeight: metrics.size.height * 0.3
                     )
                     
                     // Filter cards
@@ -66,13 +69,13 @@ private struct HomeContent: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.background)
+            .ignoresSafeArea(.all, edges: .bottom)
         }
     }
 }
 
 private struct HomeHeader: View {
     @Binding var searchText: String
-    let height: Double
     var body: some View {
         VStack {
             // Header
@@ -98,12 +101,9 @@ private struct HomeHeader: View {
 
             }
             .padding(.vertical, 24)
-            .frame(
-                maxWidth: .infinity,
-                maxHeight: height
-            )
             .background(Color.accent)
             .cornerRadius(CGFloat.large, corners: [.bottomLeft])
+            .ignoresSafeArea(.all, edges: .top)
         }
     }
 }
