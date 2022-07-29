@@ -48,12 +48,7 @@ private struct DonutDetailContent: View {
                         // Additional info
                         HStack(spacing: 24) {
                             ForEach(donut.additionalInfoEntries, id: \.id) { item in
-                                HStack(spacing: 2) {
-                                    Image(systemName: item.type.imageName)
-                                    Text(item.value.description)
-                                    Text(item.type.description)
-                                }
-                                .foregroundColor(Color.accent)
+                                AdditionalInfoEntryView(item: item)
                             }
                         }
                         // Description header
@@ -90,6 +85,18 @@ private struct DonutDetailContent: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.secondaryColor)
+    }
+}
+
+private struct AdditionalInfoEntryView: View {
+    let item: AdditionalInfoEntry
+    var body: some View {
+        HStack(spacing: 2) {
+            Image(systemName: item.type.imageName)
+            Text(item.value.description)
+            Text(item.type.description)
+        }
+        .foregroundColor(Color.accent)
     }
 }
 
