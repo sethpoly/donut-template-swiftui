@@ -17,4 +17,5 @@ extension Color {
     static let onAccent = Color("onAccent")
     static let secondaryColor = Color("secondary")
     static let onBackgroundVariant = Color("subtitle")
+    static let onBackgroundVariantLight = Color("subtitleLight")
 }
