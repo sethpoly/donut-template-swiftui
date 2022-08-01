@@ -15,6 +15,7 @@ struct DonutDetailView: View {
 
 private struct DonutDetailContent: View {
     let donut: Donut
+    
     var body: some View {
         ZStack {
             GeometryReader { metrics in
@@ -33,7 +34,7 @@ private struct DonutDetailContent: View {
                     .frame(maxWidth: .infinity, maxHeight: metrics.size.height * 0.45)
                     
                     // TODO: VStack - bottom sheet
-                    VStack(alignment: .leading, spacing: 8) {
+                    VStack(alignment: .leading, spacing: 12) {
                         // Item title
                         Text(donut.name)
                             .font(.title)
@@ -52,30 +53,28 @@ private struct DonutDetailContent: View {
                             }
                         }
                         
-                        // Description & other infor
+                        // Description & other information
                         VStack(alignment: .leading, spacing: 16) {
+                            // Description
                             VStack(alignment: .leading) {
-                                // Description header
                                 SectionHeader(header: "Description")
-                        
-                                // Description body
                                 Text("Drizzled with homemade strawberry frosting, and topped with crisp rainbow sprinkles. A true classic.")
                             }
                             
+                            // Ingredients
                             VStack(alignment: .leading) {
-                                // Ingredients header
                                 SectionHeader(header: "Ingredients")
-                        
-                                // Ingredients cards
-                                HStack {
-                                    Text("ing1")
-                                    Text("ing2")
-                                    Text("ing3")
+                                ScrollView(.horizontal, showsIndicators: false) {
+                                    HStack(spacing: 8) {
+                                        ForEach(donut.ingredients, id: \.self) {
+                                            IngredientCard(ingredientName: $0.description)
+                                        }
+                                    }
                                 }
                             }
                         }
                         
-                        // Bottom cart buttons/info
+                        // TODO: Bottom cart buttons/info
                         HStack {
                             // Quantity
                             Button(action: {}) {
@@ -122,6 +121,18 @@ private struct SectionHeader: View {
     }
 }
 
+private struct IngredientCard: View {
+    let ingredientName: String
+    var body: some View {
+        Text(ingredientName)
+            .padding(8)
+            .padding(.horizontal, 24)
+            .foregroundColor(Color.onBackground)
+            .background(Color.onBackgroundVariantLight)
+            .cornerRadius(CGFloat.large)
+    }
+}
+
 struct PreviewDonutDetail: PreviewProvider {
     static let donut = Donut(
         name: "Strawberry Frosted",
@@ -130,7 +141,8 @@ struct PreviewDonutDetail: PreviewProvider {
         additionalInfoEntries: [
             AdditionalInfoEntry(type: .stars, value: 4.3),
             AdditionalInfoEntry(type: .calories, value: 349)
-        ]
+        ],
+        ingredients: Ingredient.allCases
     )
     
     static var previews: some View {
