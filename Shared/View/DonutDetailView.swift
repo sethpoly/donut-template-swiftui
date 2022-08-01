@@ -51,18 +51,31 @@ private struct DonutDetailContent: View {
                                 AdditionalInfoEntryView(item: item)
                             }
                         }
-                        // Description header
-                        Text("Description")
-                        // Description body
-                        Text("Description body")
-                        // Ingredients header
-                        Text("Ingredients")
-                        // Ingredients cards
-                        HStack {
-                            Text("ing1")
-                            Text("ing2")
-                            Text("ing3")
+                        
+                        // Description & other infor
+                        VStack(alignment: .leading, spacing: 16) {
+                            VStack(alignment: .leading) {
+                                // Description header
+                                SectionHeader(header: "Description")
+                        
+                                // Description body
+                                Text("Drizzled with homemade strawberry frosting, and topped with crisp rainbow sprinkles. A true classic.")
+                            }
+                            
+                            VStack(alignment: .leading) {
+                                // Ingredients header
+                                SectionHeader(header: "Ingredients")
+                        
+                                // Ingredients cards
+                                HStack {
+                                    Text("ing1")
+                                    Text("ing2")
+                                    Text("ing3")
+                                }
+                            }
                         }
+                        
+                        // Bottom cart buttons/info
                         HStack {
                             // Quantity
                             Button(action: {}) {
@@ -97,6 +110,15 @@ private struct AdditionalInfoEntryView: View {
             Text(item.type.description)
         }
         .foregroundColor(Color.accent)
+    }
+}
+
+private struct SectionHeader: View {
+    let header: String
+    var body: some View {
+        Text(header)
+            .foregroundColor(Color.onBackground)
+            .font(.title3)
     }
 }
 
