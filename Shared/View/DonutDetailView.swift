@@ -75,16 +75,26 @@ private struct DonutDetailContent: View {
                         }
                         
                         // TODO: Bottom cart buttons/info
-                        HStack {
-                            // Quantity
-                            Button(action: {}) {
-                                Text("Quantity")
-                            }
-                            // Add to cart
-                            Button(action: {}) {
-                                Text("Add To Cart")
+                        ZStack(alignment: .center) {
+                            HStack {
+                                // Quantity
+                                Button(action: {}) {
+                                    Text("Quantity")
+                                }
+                                // Add to cart
+                                Button(action: {}) {
+                                    Text("Add To Cart")
+                                        .foregroundColor(Color.onAccent)
+                                }
+                                .padding()
+                                .background(Color.accent)
+                                .cornerRadius(CGFloat.medium)
                             }
                         }
+                        .frame(maxWidth: .infinity)
+                        .background(Color.red)
+                        
+                        
                         Spacer()
                     }
                     .padding(24)
