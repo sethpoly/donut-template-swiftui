@@ -75,23 +75,6 @@ private struct DonutDetailContent: View {
                                 }
                             }
                         }
-                        
-                        // Bottom cart buttons/info
-                        GeometryReader { geometry in
-                            ZStack(alignment: .center) {
-                                HStack {
-                                    QuantityButton()
-                                        .frame(maxWidth: geometry.size.width * 0.33)
-                                    
-                                    // Add to cart
-                                    AccentButton(
-                                        text: "Add To Cart",
-                                        onClick: {}
-                                    )
-                                }
-                            }
-                            .frame(maxWidth: .infinity)
-                        }
                         Spacer()
                     }
                     .padding(24)
@@ -99,6 +82,21 @@ private struct DonutDetailContent: View {
                     .background(Color.background)
                     .cornerRadius(CGFloat.large, corners: [.topLeft, .topRight])
                     .ignoresSafeArea(.all, edges: .bottom)
+                    }
+                }
+            }
+            // Bottom cart buttons/info
+            GeometryReader { geometry in
+                ZStack(alignment: .center) {
+                    HStack {
+                        QuantityButton()
+                            .frame(maxWidth: geometry.size.width * 0.33)
+                        
+                        // Add to cart
+                        AccentButton(
+                            text: "Add To Cart",
+                            onClick: {}
+                        )
                     }
                 }
             }
