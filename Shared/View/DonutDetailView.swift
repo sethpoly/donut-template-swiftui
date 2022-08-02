@@ -34,6 +34,7 @@ private struct DonutDetailContent: View {
                     .frame(maxWidth: .infinity, maxHeight: metrics.size.height * 0.45)
                     
                     // TODO: VStack - bottom sheet
+                    ScrollView {
                     VStack(alignment: .leading, spacing: 12) {
                         // Item title
                         Text(donut.name)
@@ -59,6 +60,7 @@ private struct DonutDetailContent: View {
                             VStack(alignment: .leading) {
                                 SectionHeader(header: "Description")
                                 Text("Drizzled with homemade strawberry frosting, and topped with crisp rainbow sprinkles. A true classic.")
+                                    .fixedSize(horizontal: false, vertical: true)
                             }
                             
                             // Ingredients
@@ -74,27 +76,22 @@ private struct DonutDetailContent: View {
                             }
                         }
                         
-                        // TODO: Bottom cart buttons/info
-                        ZStack(alignment: .center) {
-                            HStack {
-                                // Quantity
-                                Button(action: {}) {
-                                    Text("Quantity")
+                        // Bottom cart buttons/info
+                        GeometryReader { geometry in
+                            ZStack(alignment: .center) {
+                                HStack {
+                                    QuantityButton()
+                                        .frame(maxWidth: geometry.size.width * 0.33)
+                                    
+                                    // Add to cart
+                                    AccentButton(
+                                        text: "Add To Cart",
+                                        onClick: {}
+                                    )
                                 }
-                                // Add to cart
-                                Button(action: {}) {
-                                    Text("Add To Cart")
-                                        .foregroundColor(Color.onAccent)
-                                }
-                                .padding()
-                                .background(Color.accent)
-                                .cornerRadius(CGFloat.medium)
                             }
+                            .frame(maxWidth: .infinity)
                         }
-                        .frame(maxWidth: .infinity)
-                        .background(Color.red)
-                        
-                        
                         Spacer()
                     }
                     .padding(24)
@@ -102,6 +99,7 @@ private struct DonutDetailContent: View {
                     .background(Color.background)
                     .cornerRadius(CGFloat.large, corners: [.topLeft, .topRight])
                     .ignoresSafeArea(.all, edges: .bottom)
+                    }
                 }
             }
         }
@@ -140,6 +138,25 @@ private struct IngredientCard: View {
             .foregroundColor(Color.onBackground)
             .background(Color.onBackgroundVariantLight)
             .cornerRadius(CGFloat.large)
+    }
+}
+
+private struct QuantityButton: View {
+    var body: some View {
+        // Quantity
+        Button(action: {}) {
+            HStack {
+                Text("-")
+                Spacer()
+                Text("1")
+                Spacer()
+                Text("+")
+            }
+            .foregroundColor(Color.onBackground)
+        }
+        .padding()
+        .background(Color.onBackgroundVariantLight)
+        .cornerRadius(CGFloat.medium)
     }
 }
 

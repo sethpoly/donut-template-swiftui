@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA0B98672899551400EFFF94 /* AccentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0B98662899551400EFFF94 /* AccentButton.swift */; };
+		BA0B98682899551400EFFF94 /* AccentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0B98662899551400EFFF94 /* AccentButton.swift */; };
 		BAB66527288F5C5F007FABE8 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB66526288F5C5F007FABE8 /* Tests_iOS.swift */; };
 		BAB66529288F5C5F007FABE8 /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB66528288F5C5F007FABE8 /* Tests_iOSLaunchTests.swift */; };
 		BAB66533288F5C5F007FABE8 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB66532288F5C5F007FABE8 /* Tests_macOS.swift */; };
@@ -66,6 +68,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BA0B98662899551400EFFF94 /* AccentButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccentButton.swift; sourceTree = "<group>"; };
 		BAB6650E288F5C56007FABE8 /* DonutTemplateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonutTemplateApp.swift; sourceTree = "<group>"; };
 		BAB66510288F5C5F007FABE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BAB66515288F5C5F007FABE8 /* DonutTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DonutTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -216,6 +219,7 @@
 				BAC0685528900E9F00B9DC21 /* RoundedCorner.swift */,
 				BAC0685F2890171200B9DC21 /* SearchBar.swift */,
 				BAC068692890A2C300B9DC21 /* SegmentedPicker.swift */,
+				BA0B98662899551400EFFF94 /* AccentButton.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -415,6 +419,7 @@
 				BAC0687D2897FE4800B9DC21 /* Ingredient.swift in Sources */,
 				BAC0686D28916CD100B9DC21 /* Donut.swift in Sources */,
 				BAC0684C288F65ED00B9DC21 /* ColorManager.swift in Sources */,
+				BA0B98672899551400EFFF94 /* AccentButton.swift in Sources */,
 				BAC0687A289408C700B9DC21 /* ImageManager.swift in Sources */,
 				BAC06877289404E300B9DC21 /* AdditionalInfoEntry.swift in Sources */,
 				BAC0686A2890A2C300B9DC21 /* SegmentedPicker.swift in Sources */,
@@ -438,6 +443,7 @@
 				BAC0686E28916CD100B9DC21 /* Donut.swift in Sources */,
 				BAC068742892BA5A00B9DC21 /* DonutDetailView.swift in Sources */,
 				BAC0684D288F65ED00B9DC21 /* ColorManager.swift in Sources */,
+				BA0B98682899551400EFFF94 /* AccentButton.swift in Sources */,
 				BAC0686B2890A2C300B9DC21 /* SegmentedPicker.swift in Sources */,
 				BAC06878289404E300B9DC21 /* AdditionalInfoEntry.swift in Sources */,
 				BAC068682890A12C00B9DC21 /* FilterType.swift in Sources */,
