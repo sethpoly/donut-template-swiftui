@@ -38,7 +38,6 @@ private struct DonutDetailContent: View {
                         // Bottom sheet with details of donut
                         DonutDetailContainer(donut: donut)
                     }
-                    .ignoresSafeArea()
 
                     
                     // Bottom cart buttons/info
@@ -54,7 +53,9 @@ private struct DonutDetailContent: View {
                     }
                     .padding()
                     .frame(maxWidth: .infinity,  alignment: .leading)
+                    .background(Color.background)
                 }
+                .background(Color.secondaryColor)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.background)
