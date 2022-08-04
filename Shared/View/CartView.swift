@@ -17,10 +17,16 @@ private struct CartViewContent: View {
     var body: some View {
         ZStack {
             VStack {
-                Header(
+                CartHeader(
                     title: "My Cart",
                     subtitle: "# items"
                 )
+                
+                ScrollView {
+                    VStack {
+                        CartItem()
+                    }
+                }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
             .padding(PaddingManager.view)
@@ -31,7 +37,7 @@ private struct CartViewContent: View {
     }
 }
 
-private struct Header: View {
+private struct CartHeader: View {
     let title: String
     let subtitle: String
     
@@ -47,6 +53,30 @@ private struct Header: View {
                 .font(.headline)
                 .foregroundColor(Color.onBackground)
         }
+    }
+}
+
+private struct CartItem: View {
+    var body: some View {
+        HStack {
+            // TODO: Item Image
+            Image("donutStrawberry")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+            
+            VStack {
+                // TODO: Item name
+                Text("Item Name")
+                // TODO: Quantity button
+            }
+            
+            Spacer()
+            VStack {
+                // TODO: Delete button
+                // TODO: Item price
+            }
+        }
+        .frame(maxWidth: .infinity, maxHeight: 48)
     }
 }
 
