@@ -17,89 +17,105 @@ private struct DonutDetailContent: View {
     let donut: Donut
     
     var body: some View {
-        ZStack {
-            GeometryReader { metrics in
-                VStack {
+        GeometryReader { metrics in
+            ZStack {
+                VStack(spacing: 0) {
                     // TODO: Button Row - Nav bar
                     // ->
                     
-                    // TODO: Image - donut
-                    ZStack {
-                        Image(donut.imageName)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    ScrollView {
+                        // Image - donut
+                        ZStack {
+                            Image(donut.imageName)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        }
+                        .padding()
+                        .frame(maxWidth: .infinity, maxHeight: metrics.size.height * 0.45)
+                        .background(Color.secondaryColor.ignoresSafeArea())
+                        
+                        // Bottom sheet with details of donut
+                        DonutDetailContainer(donut: donut)
+                    }
+
+                    
+                    // Bottom cart buttons/info
+                    HStack {
+                        QuantityButton()
+                            .frame(maxWidth: metrics.size.width * 0.33)
+                        
+                        // Add to cart
+                        AccentButton(
+                            text: "Add To Cart",
+                            onClick: {}
+                        )
                     }
                     .padding()
-                    .frame(maxWidth: .infinity, maxHeight: metrics.size.height * 0.45)
-                    
-                    // TODO: VStack - bottom sheet
-                    VStack(alignment: .leading, spacing: 12) {
-                        // Item title
-                        Text(donut.name)
-                            .font(.title)
-                            .fontWeight(.bold)
-                            .foregroundColor(Color.onBackground)
-                        
-                        // Item price
-                        Text(donut.price)
-                            .font(.title2)
-                            .foregroundColor(Color.onBackground)
-                        
-                        // Additional info
-                        HStack(spacing: 24) {
-                            ForEach(donut.additionalInfoEntries, id: \.id) { item in
-                                AdditionalInfoEntryView(item: item)
-                            }
-                        }
-                        
-                        // Description & other information
-                        VStack(alignment: .leading, spacing: 16) {
-                            // Description
-                            VStack(alignment: .leading) {
-                                SectionHeader(header: "Description")
-                                Text("Drizzled with homemade strawberry frosting, and topped with crisp rainbow sprinkles. A true classic.")
-                            }
-                            
-                            // Ingredients
-                            VStack(alignment: .leading) {
-                                SectionHeader(header: "Ingredients")
-                                ScrollView(.horizontal, showsIndicators: false) {
-                                    HStack(spacing: 8) {
-                                        ForEach(donut.ingredients, id: \.self) {
-                                            IngredientCard(ingredientName: $0.description)
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                        
-                        // TODO: Bottom cart buttons/info
-                        HStack {
-                            // Quantity
-                            Button(action: {}) {
-                                Text("Quantity")
-                            }
-                            // Add to cart
-                            Button(action: {}) {
-                                Text("Add To Cart")
-                            }
-                        }
-                        Spacer()
-                    }
-                    .padding(24)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                    .frame(maxWidth: .infinity,  alignment: .leading)
                     .background(Color.background)
-                    .cornerRadius(CGFloat.large, corners: [.topLeft, .topRight])
-                    .ignoresSafeArea(.all, edges: .bottom)
                 }
+                .background(Color.secondaryColor)
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color.background)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.secondaryColor)
     }
 }
 
+/// Container for all details about this donut
+private struct DonutDetailContainer: View {
+    let donut: Donut
+    var body: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            // Item title
+            Text(donut.name)
+                .font(.title)
+                .fontWeight(.bold)
+                .foregroundColor(Color.onBackground)
+            
+            // Item price
+            Text(donut.price)
+                .font(.title2)
+                .foregroundColor(Color.onBackground)
+            
+            // Additional info
+            HStack(spacing: 24) {
+                ForEach(donut.additionalInfoEntries, id: \.id) { item in
+                    AdditionalInfoEntryView(item: item)
+                }
+            }
+            
+            // Description & other information
+            VStack(alignment: .leading, spacing: 16) {
+                // Description
+                VStack(alignment: .leading) {
+                    SectionHeader(header: "Description")
+                    Text("Drizzled with homemade strawberry frosting, and topped with crisp rainbow sprinkles. A true classic.")
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+                
+                // Ingredients
+                VStack(alignment: .leading) {
+                    SectionHeader(header: "Ingredients")
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 8) {
+                            ForEach(donut.ingredients, id: \.self) {
+                                IngredientCard(ingredientName: $0.description)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .padding()
+        .frame(maxWidth: .infinity,  alignment: .leading)
+        .background(Color.background)
+        .cornerRadius(CGFloat.large, corners: [.topLeft, .topRight])
+    }
+}
+
+/// For additional info such as Calories or Reviews
 private struct AdditionalInfoEntryView: View {
     let item: AdditionalInfoEntry
     var body: some View {
@@ -130,6 +146,29 @@ private struct IngredientCard: View {
             .foregroundColor(Color.onBackground)
             .background(Color.onBackgroundVariantLight)
             .cornerRadius(CGFloat.large)
+    }
+}
+
+private struct QuantityButton: View {
+    var body: some View {
+        // Quantity
+        //Button(action: {}) {
+            HStack {
+                Button(action: {}) {
+                    Text("-")
+                }
+                Spacer()
+                Text("1")
+                Spacer()
+                Button(action: {}) {
+                    Text("+")
+                }
+            }
+            .foregroundColor(Color.onBackground)
+        //}
+        .padding()
+        .background(Color.onBackgroundVariantLight)
+        .cornerRadius(CGFloat.medium)
     }
 }
 
