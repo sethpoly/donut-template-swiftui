@@ -152,16 +152,20 @@ private struct IngredientCard: View {
 private struct QuantityButton: View {
     var body: some View {
         // Quantity
-        Button(action: {}) {
+        //Button(action: {}) {
             HStack {
-                Text("-")
+                Button(action: {}) {
+                    Text("-")
+                }
                 Spacer()
                 Text("1")
                 Spacer()
-                Text("+")
+                Button(action: {}) {
+                    Text("+")
+                }
             }
             .foregroundColor(Color.onBackground)
-        }
+        //}
         .padding()
         .background(Color.onBackgroundVariantLight)
         .cornerRadius(CGFloat.medium)
