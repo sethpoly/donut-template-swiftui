@@ -8,12 +8,16 @@
 import SwiftUI
 
 struct CartView: View {
+    @ObservedObject var cartViewModel = CartViewModel()
     var body: some View {
-        CartViewContent()
+        CartViewContent(
+            items: cartViewModel.donuts
+        )
     }
 }
 
 private struct CartViewContent: View {
+    let items: [Donut]
     var body: some View {
         ZStack {
             VStack {
@@ -23,12 +27,14 @@ private struct CartViewContent: View {
                 )
                 
                 ScrollView {
-                    VStack {
-                        CartItem(
-                            onDeleteClick: {
-                                /**TODO: */
-                            }
-                        )
+                    LazyVStack {
+                        ForEach(items.indices, id: \.self) { index in
+                            CartItem(
+                                onDeleteClick: {
+                                    /**TODO: */
+                                }
+                            )
+                        }
                     }
                 }
             }
@@ -80,6 +86,7 @@ private struct CartItem: View {
                     // Item name
                     Text("Item Name")
                         .foregroundColor(Color.onBackground)
+                        .fontWeight(.medium)
                     Spacer()
                     // Delete button
                     Button(action: onDeleteClick) {
@@ -156,6 +163,6 @@ private struct BorderedImageButton: View {
 
 struct Cart_Previews: PreviewProvider {
     static var previews: some View {
-        CartViewContent()
+        CartViewContent(items: [])
     }
 }

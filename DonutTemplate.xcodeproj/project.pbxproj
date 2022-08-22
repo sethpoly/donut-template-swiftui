@@ -12,6 +12,8 @@
 		BA0B986A2899EEDB00EFFF94 /* PaddingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0B98692899EEDB00EFFF94 /* PaddingManager.swift */; };
 		BA0B986B2899EEDB00EFFF94 /* PaddingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0B98692899EEDB00EFFF94 /* PaddingManager.swift */; };
 		BA0B986D289BF58500EFFF94 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0B986C289BF58500EFFF94 /* CartView.swift */; };
+		BA163C5628B3B2CA00BCE98F /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA163C5528B3B2CA00BCE98F /* CartViewModel.swift */; };
+		BA163C5728B3B2CA00BCE98F /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA163C5528B3B2CA00BCE98F /* CartViewModel.swift */; };
 		BAB66527288F5C5F007FABE8 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB66526288F5C5F007FABE8 /* Tests_iOS.swift */; };
 		BAB66529288F5C5F007FABE8 /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB66528288F5C5F007FABE8 /* Tests_iOSLaunchTests.swift */; };
 		BAB66533288F5C5F007FABE8 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB66532288F5C5F007FABE8 /* Tests_macOS.swift */; };
@@ -74,6 +76,7 @@
 		BA0B98662899551400EFFF94 /* AccentButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccentButton.swift; sourceTree = "<group>"; };
 		BA0B98692899EEDB00EFFF94 /* PaddingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingManager.swift; sourceTree = "<group>"; };
 		BA0B986C289BF58500EFFF94 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
+		BA163C5528B3B2CA00BCE98F /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
 		BAB6650E288F5C56007FABE8 /* DonutTemplateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonutTemplateApp.swift; sourceTree = "<group>"; };
 		BAB66510288F5C5F007FABE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BAB66515288F5C5F007FABE8 /* DonutTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DonutTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -255,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				BAC0686F2892B3A000B9DC21 /* HomeViewModel.swift */,
+				BA163C5528B3B2CA00BCE98F /* CartViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -435,6 +439,7 @@
 				BAC068702892B3A000B9DC21 /* HomeViewModel.swift in Sources */,
 				BAC0685D28900F0C00B9DC21 /* ShapeManager.swift in Sources */,
 				BAC0685428900AE600B9DC21 /* HomeView.swift in Sources */,
+				BA163C5628B3B2CA00BCE98F /* CartViewModel.swift in Sources */,
 				BAB66536288F5C5F007FABE8 /* DonutTemplateApp.swift in Sources */,
 				BA0B986D289BF58500EFFF94 /* CartView.swift in Sources */,
 				BAC068672890A12C00B9DC21 /* FilterType.swift in Sources */,
@@ -451,6 +456,7 @@
 				BAC0687E2897FE4800B9DC21 /* Ingredient.swift in Sources */,
 				BAC0685728900E9F00B9DC21 /* RoundedCorner.swift in Sources */,
 				BAC0686E28916CD100B9DC21 /* Donut.swift in Sources */,
+				BA163C5728B3B2CA00BCE98F /* CartViewModel.swift in Sources */,
 				BAC068742892BA5A00B9DC21 /* DonutDetailView.swift in Sources */,
 				BAC0684D288F65ED00B9DC21 /* ColorManager.swift in Sources */,
 				BA0B98682899551400EFFF94 /* AccentButton.swift in Sources */,
