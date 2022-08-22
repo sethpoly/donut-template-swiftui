@@ -61,38 +61,96 @@ private struct CartHeader: View {
 }
 
 private struct CartItem: View {
+    @State var testQuantity: Int = 1
     let onDeleteClick: () -> Void
     
     var body: some View {
         HStack {
-            // TODO: Item Image
+            // Item Image
             Image("donutStrawberry")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
+                .frame(maxHeight: 64)
             
-            VStack {
+            Spacer()
+                .frame(width: 12)
+            
+            VStack(spacing: 6) {
                 HStack {
-                    // TODO: Item name
+                    // Item name
                     Text("Item Name")
+                        .foregroundColor(Color.onBackground)
                     Spacer()
-                    // TODO: Delete button
+                    // Delete button
                     Button(action: onDeleteClick) {
                         Image(systemName: "trash")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(maxWidth: 24, maxHeight: 24)
-                            .foregroundColor(Color.onBackground)
+                            .frame(maxWidth: 16, maxHeight: 16)
+                            .foregroundColor(Color.onForeground)
                     }
                 }
                 
                 HStack {
                     // TODO: Quantity button
-                    // TODO: Item price
+                    QuantityButtonAlternate(
+                        quantity: $testQuantity
+                    )
+                    Spacer()
+                    // Item price
+                    Text("$9.99")
+                        .foregroundColor(Color.onForeground)
                 }
             }
             .frame(maxWidth: .infinity)
         }
-        .frame(maxWidth: .infinity, maxHeight: 48)
+        .frame(maxWidth: .infinity)
+    }
+}
+
+struct QuantityButtonAlternate: View {
+    @Binding var quantity: Int
+    
+    var body: some View {
+        HStack() {
+            BorderedImageButton(
+                imageName: "minus",
+                onClick: {
+                    quantity -= 1
+                }
+            )
+            Text("\(quantity)")
+                .foregroundColor(Color.onBackground)
+                .fixedSize()
+                .frame(width: 24)
+            BorderedImageButton(
+                imageName: "plus", onClick: {
+                    quantity += 1
+                }
+            )
+        }
+        .fixedSize()
+    }
+}
+
+private struct BorderedImageButton: View {
+    let imageName: String
+    let color: Color = Color.onBackground.opacity(0.7)
+    let onClick: () -> Void
+    
+    var body: some View {
+        Button(action: onClick) {
+            Image(systemName: imageName)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(maxWidth: 12, maxHeight: 12)
+                .foregroundColor(color)
+                .padding(4)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 6)
+                        .stroke(color, lineWidth: 2)
+                )
+        }
     }
 }
 
