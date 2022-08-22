@@ -24,7 +24,11 @@ private struct CartViewContent: View {
                 
                 ScrollView {
                     VStack {
-                        CartItem()
+                        CartItem(
+                            onDeleteClick: {
+                                /**TODO: */
+                            }
+                        )
                     }
                 }
             }
@@ -57,6 +61,8 @@ private struct CartHeader: View {
 }
 
 private struct CartItem: View {
+    let onDeleteClick: () -> Void
+    
     var body: some View {
         HStack {
             // TODO: Item Image
@@ -65,16 +71,26 @@ private struct CartItem: View {
                 .aspectRatio(contentMode: .fit)
             
             VStack {
-                // TODO: Item name
-                Text("Item Name")
-                // TODO: Quantity button
+                HStack {
+                    // TODO: Item name
+                    Text("Item Name")
+                    Spacer()
+                    // TODO: Delete button
+                    Button(action: onDeleteClick) {
+                        Image(systemName: "trash")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(maxWidth: 24, maxHeight: 24)
+                            .foregroundColor(Color.onBackground)
+                    }
+                }
+                
+                HStack {
+                    // TODO: Quantity button
+                    // TODO: Item price
+                }
             }
-            
-            Spacer()
-            VStack {
-                // TODO: Delete button
-                // TODO: Item price
-            }
+            .frame(maxWidth: .infinity)
         }
         .frame(maxWidth: .infinity, maxHeight: 48)
     }
