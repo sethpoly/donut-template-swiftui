@@ -149,7 +149,7 @@ private struct IngredientCard: View {
     }
 }
 
-private struct QuantityButton: View {
+struct QuantityButton: View {
     var body: some View {
         HStack {
             Button(action: {}) {

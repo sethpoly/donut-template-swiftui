@@ -62,8 +62,8 @@ private struct HomeContent: View {
                                 )
                             }
                         }
-                        .padding(.horizontal)
                     }
+                    .padding(.horizontal)
                     Spacer()
                 }
             }
