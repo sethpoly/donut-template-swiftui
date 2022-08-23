@@ -34,6 +34,9 @@ private struct CartViewContent: View {
                                     /**TODO: */
                                 }
                             )
+                            CustomDivider(
+                                color: Color.onBackgroundVariantLight
+                            )
                         }
                     }
                 }
@@ -162,7 +165,15 @@ private struct BorderedImageButton: View {
 }
 
 struct Cart_Previews: PreviewProvider {
+    static var donuts: [Donut] = [
+        Donut(name: "Strawberry", price: "$2.00", imageName: "donutStrawberry"),
+        Donut(name: "Strawberry", price: "$2.00", imageName: "donutStrawberry"),
+        Donut(name: "Strawberry", price: "$2.00", imageName: "donutStrawberry"),
+        Donut(name: "Strawberry", price: "$2.00", imageName: "donutStrawberry"),
+        Donut(name: "Strawberry", price: "$2.00", imageName: "donutStrawberry")
+    ]
+    
     static var previews: some View {
-        CartViewContent(items: [])
+        CartViewContent(items: donuts)
     }
 }
