@@ -63,13 +63,18 @@ private struct HomeContent: View {
                             }
                         }
                     }
-                    .padding(.horizontal)
+                    .padding(.horizontal, 8)
                     Spacer()
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.background)
             .ignoresSafeArea(.all, edges: .bottom)
+            .customNavigationBar(
+                leadingButtonImage: ImageManager.hamburgerMenu,
+                leadingButtonAction: {/*TODO: */},
+                trailingButtonImage: ImageManager.cart,
+                trailingButtonAction: {/*TODO: Nav to cart view*/})
         }
     }
 }
@@ -120,6 +125,8 @@ private struct ItemCard: View {
                     .cornerRadius(CGFloat.medium)
                 // Image
                 Image(donut.imageName)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
             }
             .padding([.horizontal, .top] , 8)
             

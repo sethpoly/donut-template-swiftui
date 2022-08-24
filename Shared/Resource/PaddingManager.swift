@@ -9,4 +9,5 @@ import SwiftUI
 
 struct PaddingManager {
     static let view: CGFloat = 24
+    static let navBarHeight: CGFloat = 70
 }

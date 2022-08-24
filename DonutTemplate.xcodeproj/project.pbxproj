@@ -16,6 +16,8 @@
 		BA163C5728B3B2CA00BCE98F /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA163C5528B3B2CA00BCE98F /* CartViewModel.swift */; };
 		BA163C5928B4F97F00BCE98F /* CustomDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA163C5828B4F97F00BCE98F /* CustomDivider.swift */; };
 		BA163C5A28B4F97F00BCE98F /* CustomDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA163C5828B4F97F00BCE98F /* CustomDivider.swift */; };
+		BA163C5F28B64BE100BCE98F /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA163C5E28B64BE100BCE98F /* CustomNavigationBar.swift */; };
+		BA163C6028B64BE100BCE98F /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA163C5E28B64BE100BCE98F /* CustomNavigationBar.swift */; };
 		BAB66527288F5C5F007FABE8 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB66526288F5C5F007FABE8 /* Tests_iOS.swift */; };
 		BAB66529288F5C5F007FABE8 /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB66528288F5C5F007FABE8 /* Tests_iOSLaunchTests.swift */; };
 		BAB66533288F5C5F007FABE8 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB66532288F5C5F007FABE8 /* Tests_macOS.swift */; };
@@ -80,6 +82,7 @@
 		BA0B986C289BF58500EFFF94 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		BA163C5528B3B2CA00BCE98F /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
 		BA163C5828B4F97F00BCE98F /* CustomDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDivider.swift; sourceTree = "<group>"; };
+		BA163C5E28B64BE100BCE98F /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		BAB6650E288F5C56007FABE8 /* DonutTemplateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonutTemplateApp.swift; sourceTree = "<group>"; };
 		BAB66510288F5C5F007FABE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BAB66515288F5C5F007FABE8 /* DonutTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DonutTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -234,6 +237,7 @@
 				BAC068692890A2C300B9DC21 /* SegmentedPicker.swift */,
 				BA0B98662899551400EFFF94 /* AccentButton.swift */,
 				BA163C5828B4F97F00BCE98F /* CustomDivider.swift */,
+				BA163C5E28B64BE100BCE98F /* CustomNavigationBar.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -427,6 +431,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA163C5F28B64BE100BCE98F /* CustomNavigationBar.swift in Sources */,
 				BAC068602890171200B9DC21 /* SearchBar.swift in Sources */,
 				BAC068732892BA5A00B9DC21 /* DonutDetailView.swift in Sources */,
 				BAC0685628900E9F00B9DC21 /* RoundedCorner.swift in Sources */,
@@ -459,6 +464,7 @@
 				BA0B986B2899EEDB00EFFF94 /* PaddingManager.swift in Sources */,
 				BAC0685E28900F0C00B9DC21 /* ShapeManager.swift in Sources */,
 				BAC068712892B3A000B9DC21 /* HomeViewModel.swift in Sources */,
+				BA163C6028B64BE100BCE98F /* CustomNavigationBar.swift in Sources */,
 				BAC0687E2897FE4800B9DC21 /* Ingredient.swift in Sources */,
 				BAC0685728900E9F00B9DC21 /* RoundedCorner.swift in Sources */,
 				BAC0686E28916CD100B9DC21 /* Donut.swift in Sources */,
