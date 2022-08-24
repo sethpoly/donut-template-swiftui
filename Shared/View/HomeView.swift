@@ -63,7 +63,7 @@ private struct HomeContent: View {
                             }
                         }
                     }
-                    .padding(.horizontal, PaddingManager.view)
+                    .padding(.horizontal, 8)
                     Spacer()
                 }
             }
@@ -71,9 +71,9 @@ private struct HomeContent: View {
             .background(Color.background)
             .ignoresSafeArea(.all, edges: .bottom)
             .customNavigationBar(
-                leadingButtonImage: "line.3.horizontal",
+                leadingButtonImage: ImageManager.hamburgerMenu,
                 leadingButtonAction: {/*TODO: */},
-                trailingButtonImage: "cart",
+                trailingButtonImage: ImageManager.cart,
                 trailingButtonAction: {/*TODO: Nav to cart view*/})
         }
     }
@@ -125,6 +125,8 @@ private struct ItemCard: View {
                     .cornerRadius(CGFloat.medium)
                 // Image
                 Image(donut.imageName)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
             }
             .padding([.horizontal, .top] , 8)
             

@@ -9,4 +9,6 @@ import Foundation
 
 struct ImageManager  {
     static let imageDonutStrawberry = "donutStrawberry"
+    static let cart = "cart"
+    static let hamburgerMenu = "line.3.horizontal"
 }
