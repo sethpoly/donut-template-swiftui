@@ -63,13 +63,18 @@ private struct HomeContent: View {
                             }
                         }
                     }
-                    .padding(.horizontal)
+                    .padding(.horizontal, PaddingManager.view)
                     Spacer()
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.background)
             .ignoresSafeArea(.all, edges: .bottom)
+            .customNavigationBar(
+                leadingButtonImage: "line.3.horizontal",
+                leadingButtonAction: {/*TODO: */},
+                trailingButtonImage: "cart",
+                trailingButtonAction: {/*TODO: Nav to cart view*/})
         }
     }
 }
