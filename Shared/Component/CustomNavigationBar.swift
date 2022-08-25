@@ -9,29 +9,33 @@ import SwiftUI
 
 extension View {
     func customNavigationBar(
-        leadingButtonImage: String,
+        leadingButtonImage: String?,
         leadingButtonAction: @escaping () -> Void,
-        trailingButtonImage: String,
+        trailingButtonImage: String?,
         trailingButtonAction: @escaping () -> Void,
         imageTint: Color = Color.background
     ) -> some View {
         overlay {
             ZStack {
                 HStack {
-                    RoundButton(onClick: leadingButtonAction) {
-                        Image(systemName: leadingButtonImage)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(maxWidth: 24, maxHeight: 24)
-                            .foregroundColor(imageTint)
+                    if(leadingButtonImage != nil) {
+                        RoundButton(onClick: leadingButtonAction) {
+                            Image(systemName: leadingButtonImage!)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(maxWidth: 24, maxHeight: 24)
+                                .foregroundColor(imageTint)
+                        }
                     }
                     Spacer()
-                    RoundButton(onClick: trailingButtonAction) {
-                        Image(systemName: trailingButtonImage)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(maxWidth: 24, maxHeight: 24)
-                            .foregroundColor(imageTint)
+                    if(trailingButtonImage != nil) {
+                        RoundButton(onClick: trailingButtonAction) {
+                            Image(systemName: trailingButtonImage!)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(maxWidth: 24, maxHeight: 24)
+                                .foregroundColor(imageTint)
+                        }
                     }
                 }
                 .padding(.horizontal, PaddingManager.view)
