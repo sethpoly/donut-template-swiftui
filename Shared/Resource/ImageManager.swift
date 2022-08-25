@@ -13,4 +13,5 @@ struct ImageManager  {
     static let hamburgerMenu = "line.3.horizontal"
     static let arrowLeft = "arrow.left"
     static let heartFill = "heart.fill"
+    static let xmark = "xmark"
 }

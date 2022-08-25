@@ -22,6 +22,19 @@ private struct CartViewContent: View {
         GeometryReader { metrics in
             ZStack {
                 VStack {
+                    // Close button
+                    HStack {
+                        Button(action: {/*TODO: Close sheet*/}) {
+                            Image(systemName: ImageManager.xmark)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(maxWidth: 20, maxHeight: 20)
+                                .foregroundColor(Color.onBackground)
+                        }
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    Spacer()
+                    
                     CartHeader(
                         title: "My Cart",
                         subtitle: "\(items.count) items"
@@ -72,7 +85,7 @@ private struct CartViewContent: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.background)
-            .ignoresSafeArea(.all, edges: .bottom)
+            .ignoresSafeArea(.all, edges: [.bottom])
         }
     }
 }
