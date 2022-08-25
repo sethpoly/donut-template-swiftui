@@ -12,25 +12,26 @@ extension View {
         leadingButtonImage: String,
         leadingButtonAction: @escaping () -> Void,
         trailingButtonImage: String,
-        trailingButtonAction: @escaping () -> Void
+        trailingButtonAction: @escaping () -> Void,
+        imageTint: Color = Color.background
     ) -> some View {
         overlay {
             ZStack {
                 HStack {
-                    Button(action: leadingButtonAction) {
+                    RoundButton(onClick: leadingButtonAction) {
                         Image(systemName: leadingButtonImage)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(maxWidth: 32, maxHeight: 32)
-                            .foregroundColor(Color.background)
+                            .frame(maxWidth: 24, maxHeight: 24)
+                            .foregroundColor(imageTint)
                     }
                     Spacer()
-                    Button(action: trailingButtonAction) {
+                    RoundButton(onClick: trailingButtonAction) {
                         Image(systemName: trailingButtonImage)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(maxWidth: 32, maxHeight: 32)
-                            .foregroundColor(Color.background)
+                            .frame(maxWidth: 24, maxHeight: 24)
+                            .foregroundColor(imageTint)
                     }
                 }
                 .padding(.horizontal, PaddingManager.view)
