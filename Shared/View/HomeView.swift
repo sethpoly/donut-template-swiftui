@@ -9,6 +9,8 @@ import SwiftUI
 
 struct HomeView: View {
     @ObservedObject private var homeViewModel = HomeViewModel()
+    let router: Router
+    
     var body: some View {
         HomeContent(
             donuts: homeViewModel.donuts,

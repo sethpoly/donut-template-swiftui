@@ -12,6 +12,9 @@
 		BA0B986A2899EEDB00EFFF94 /* PaddingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0B98692899EEDB00EFFF94 /* PaddingManager.swift */; };
 		BA0B986B2899EEDB00EFFF94 /* PaddingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0B98692899EEDB00EFFF94 /* PaddingManager.swift */; };
 		BA0B986D289BF58500EFFF94 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0B986C289BF58500EFFF94 /* CartView.swift */; };
+		BA105C0D28B7A1CF00999B4A /* NavigationStack in Frameworks */ = {isa = PBXBuildFile; productRef = BA105C0C28B7A1CF00999B4A /* NavigationStack */; };
+		BA105C0F28B7A22D00999B4A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA105C0E28B7A22D00999B4A /* MainView.swift */; };
+		BA105C1228B7A36F00999B4A /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA105C1128B7A36F00999B4A /* Router.swift */; };
 		BA163C5628B3B2CA00BCE98F /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA163C5528B3B2CA00BCE98F /* CartViewModel.swift */; };
 		BA163C5728B3B2CA00BCE98F /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA163C5528B3B2CA00BCE98F /* CartViewModel.swift */; };
 		BA163C5928B4F97F00BCE98F /* CustomDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA163C5828B4F97F00BCE98F /* CustomDivider.swift */; };
@@ -82,6 +85,8 @@
 		BA0B98662899551400EFFF94 /* AccentButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccentButton.swift; sourceTree = "<group>"; };
 		BA0B98692899EEDB00EFFF94 /* PaddingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingManager.swift; sourceTree = "<group>"; };
 		BA0B986C289BF58500EFFF94 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
+		BA105C0E28B7A22D00999B4A /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		BA105C1128B7A36F00999B4A /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		BA163C5528B3B2CA00BCE98F /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
 		BA163C5828B4F97F00BCE98F /* CustomDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDivider.swift; sourceTree = "<group>"; };
 		BA163C5E28B64BE100BCE98F /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
@@ -120,6 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA105C0D28B7A1CF00999B4A /* NavigationStack in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +153,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA105C1028B7A36400999B4A /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				BA105C1128B7A36F00999B4A /* Router.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 		BAB66508288F5C56007FABE8 = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +175,7 @@
 		BAB6650D288F5C56007FABE8 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				BA105C1028B7A36400999B4A /* Navigation */,
 				BAC068752892BAB000B9DC21 /* ViewModel */,
 				BAC0686528909F6500B9DC21 /* Model */,
 				BAC0685828900EB100B9DC21 /* Extension */,
@@ -228,6 +243,7 @@
 				BAC0685328900AE600B9DC21 /* HomeView.swift */,
 				BAC068722892BA5A00B9DC21 /* DonutDetailView.swift */,
 				BA0B986C289BF58500EFFF94 /* CartView.swift */,
+				BA105C0E28B7A22D00999B4A /* MainView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -291,6 +307,9 @@
 			dependencies = (
 			);
 			name = "DonutTemplate (iOS)";
+			packageProductDependencies = (
+				BA105C0C28B7A1CF00999B4A /* NavigationStack */,
+			);
 			productName = "DonutTemplate (iOS)";
 			productReference = BAB66515288F5C5F007FABE8 /* DonutTemplate.app */;
 			productType = "com.apple.product-type.application";
@@ -383,6 +402,9 @@
 				Base,
 			);
 			mainGroup = BAB66508288F5C56007FABE8;
+			packageReferences = (
+				BA105C0B28B7A1CF00999B4A /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */,
+			);
 			productRefGroup = BAB66516288F5C5F007FABE8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -436,6 +458,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA163C5F28B64BE100BCE98F /* CustomNavigationBar.swift in Sources */,
+				BA105C0F28B7A22D00999B4A /* MainView.swift in Sources */,
+				BA105C1228B7A36F00999B4A /* Router.swift in Sources */,
 				BAC068602890171200B9DC21 /* SearchBar.swift in Sources */,
 				BAC068732892BA5A00B9DC21 /* DonutDetailView.swift in Sources */,
 				BAC0685628900E9F00B9DC21 /* RoundedCorner.swift in Sources */,
@@ -877,6 +901,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BA105C0B28B7A1CF00999B4A /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/matteopuc/swiftui-navigation-stack";
+			requirement = {
+				kind = exactVersion;
+				version = 1.0.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BA105C0C28B7A1CF00999B4A /* NavigationStack */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA105C0B28B7A1CF00999B4A /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */;
+			productName = NavigationStack;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BAB66509288F5C56007FABE8 /* Project object */;
 }

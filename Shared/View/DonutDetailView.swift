@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct DonutDetailView: View {
+    let router: Router
+    
     var body: some View {
         DonutDetailContent(donut: Donut(name: "", price: "", imageName: ""))
     }
