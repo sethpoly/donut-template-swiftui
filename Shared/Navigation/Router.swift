@@ -17,8 +17,8 @@ class Router {
         self.navStack = navStack
     }
     
-    func toDonutDetail() {
-        self.navStack.push(DonutDetailView(router: self))
+    func toDonutDetail(donut: Donut) {
+        self.navStack.push(DonutDetailView(router: self, donut: donut))
     }
     
     func toHome() {

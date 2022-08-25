@@ -9,9 +9,10 @@ import SwiftUI
 
 struct DonutDetailView: View {
     let router: Router
+    let donut: Donut
     
     var body: some View {
-        DonutDetailContent(donut: Donut(name: "", price: "", imageName: ""))
+        DonutDetailContent(donut: donut)
     }
 }
 

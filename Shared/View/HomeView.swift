@@ -16,6 +16,9 @@ struct HomeView: View {
             donuts: homeViewModel.donuts,
             onAddToCart: {
                 homeViewModel.addToCart(itemId: $0)
+            },
+            onDonutClick: { donutToView in
+                router.toDonutDetail(donut: donutToView)
             }
         )
     }
@@ -24,6 +27,7 @@ struct HomeView: View {
 private struct HomeContent: View {
     let donuts: [Donut]
     let onAddToCart: (String) -> Void
+    let onDonutClick: (Donut) -> Void
     @State private var searchText: String = ""
     @State private var filter = FilterType.all.rawValue
     
@@ -50,6 +54,7 @@ private struct HomeContent: View {
                         selection: $filter,
                         titles: FilterType.allCases.map {$0.description}
                     )
+                    .fixedSize()
                     .padding(.horizontal, 8)
                     
                     // Donut card list
@@ -60,6 +65,9 @@ private struct HomeContent: View {
                                     donut: item,
                                     onAddClick: {
                                         onAddToCart($0)
+                                    },
+                                    onDonutClick: {
+                                        onDonutClick(item)
                                     }
                                 )
                             }
@@ -72,11 +80,12 @@ private struct HomeContent: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.background)
             .ignoresSafeArea(.all, edges: .bottom)
-            .customNavigationBar(
-                leadingButtonImage: ImageManager.hamburgerMenu,
-                leadingButtonAction: {/*TODO: */},
-                trailingButtonImage: ImageManager.cart,
-                trailingButtonAction: {/*TODO: Nav to cart view*/})
+//            .customNavigationBar(
+//                leadingButtonImage: ImageManager.hamburgerMenu,
+//                leadingButtonAction: {/*TODO: */},
+//                trailingButtonImage: ImageManager.cart,
+//                trailingButtonAction: {/*TODO: Nav to cart view*/}
+//            )
         }
     }
 }
@@ -119,6 +128,7 @@ private struct HomeHeader: View {
 private struct ItemCard: View {
     let donut: Donut
     let onAddClick: (String) -> Void
+    let onDonutClick: () -> Void
     var body: some View {
         VStack(alignment: .leading) {
             // Image + background
@@ -160,6 +170,9 @@ private struct ItemCard: View {
         .background(Color.foreground)
         .cornerRadius(CGFloat.medium)
         .shadow(color: .gray, radius: 3, x: -2, y: 2)
+//        .onTapGesture {
+//            onDonutClick()
+//        }
     }
 }
 
@@ -174,7 +187,8 @@ struct HomeView_Previews: PreviewProvider {
                 Donut(name: "Strawberry", price: "$2.00", imageName: "donutStrawberry"),
                 Donut(name: "Strawberry", price: "$2.00", imageName: "donutStrawberry")
             ],
-            onAddToCart: { _ in }
+            onAddToCart: { _ in },
+            onDonutClick: { _ in }
         )
     }
 }
