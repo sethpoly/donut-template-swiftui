@@ -7,19 +7,21 @@
 
 import SwiftUI
 
-extension View {
-    func customNavigationBar(
-        leadingButtonImage: String?,
-        leadingButtonAction: @escaping () -> Void,
-        trailingButtonImage: String?,
-        trailingButtonAction: @escaping () -> Void,
-        imageTint: Color = Color.background
-    ) -> some View {
-        overlay {
-            ZStack {
+struct CustomNavigationBar<Content: View>: View {
+    let leadingButtonImage: String?
+    let leadingButtonAction: () -> Void
+    let trailingButtonImage: String?
+    let trailingButtonAction: () -> Void
+    let imageTint: Color = Color.background
+    let backgroundColor: Color
+    @ViewBuilder var content: Content
+    
+    var body: some View {
+        ZStack {
+            VStack(spacing: 0) {
                 HStack {
                     if(leadingButtonImage != nil) {
-                        RoundButton(onClick: leadingButtonAction) {
+                        Button(action: leadingButtonAction) {
                             Image(systemName: leadingButtonImage!)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
@@ -29,7 +31,7 @@ extension View {
                     }
                     Spacer()
                     if(trailingButtonImage != nil) {
-                        RoundButton(onClick: trailingButtonAction) {
+                        Button(action: trailingButtonAction) {
                             Image(systemName: trailingButtonImage!)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
@@ -39,11 +41,11 @@ extension View {
                     }
                 }
                 .padding(.horizontal, PaddingManager.view)
-                .frame(maxHeight: PaddingManager.navBarHeight)
+                content
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-            .edgesIgnoringSafeArea(.top)
         }
+        .frame(maxWidth: .infinity)
+        .background(backgroundColor)
     }
 }
 

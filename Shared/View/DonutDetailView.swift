@@ -62,13 +62,13 @@ private struct DonutDetailContent: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.background)
-            .customNavigationBar(
-                leadingButtonImage: ImageManager.arrowLeft,
-                leadingButtonAction: {/*TODO:*/},
-                trailingButtonImage: ImageManager.heartFill,
-                trailingButtonAction: {/*TODO:*/},
-                imageTint: .onBackgroundVariantLight
-            )
+//            .customNavigationBar(
+//                leadingButtonImage: ImageManager.arrowLeft,
+//                leadingButtonAction: {/*TODO:*/},
+//                trailingButtonImage: ImageManager.heartFill,
+//                trailingButtonAction: {/*TODO:*/},
+//                imageTint: .onBackgroundVariantLight
+//            )
         }
     }
 }

@@ -12,15 +12,22 @@ struct HomeView: View {
     let router: Router
     
     var body: some View {
-        HomeContent(
-            donuts: homeViewModel.donuts,
-            onAddToCart: {
-                homeViewModel.addToCart(itemId: $0)
-            },
-            onDonutClick: { donutToView in
-                router.toDonutDetail(donut: donutToView)
-            }
-        )
+        CustomNavigationBar(
+            leadingButtonImage: ImageManager.hamburgerMenu,
+            leadingButtonAction: {},
+            trailingButtonImage: ImageManager.cart,
+            trailingButtonAction: {},
+            backgroundColor: Color.accent) {
+            HomeContent(
+                donuts: homeViewModel.donuts,
+                onAddToCart: {
+                    homeViewModel.addToCart(itemId: $0)
+                },
+                onDonutClick: { donutToView in
+                    router.toDonutDetail(donut: donutToView)
+                }
+            )
+        }
     }
 }
 
@@ -80,12 +87,6 @@ private struct HomeContent: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.background)
             .ignoresSafeArea(.all, edges: .bottom)
-//            .customNavigationBar(
-//                leadingButtonImage: ImageManager.hamburgerMenu,
-//                leadingButtonAction: {/*TODO: */},
-//                trailingButtonImage: ImageManager.cart,
-//                trailingButtonAction: {/*TODO: Nav to cart view*/}
-//            )
         }
     }
 }
