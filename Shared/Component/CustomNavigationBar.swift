@@ -14,6 +14,7 @@ struct CustomNavigationBar<Content: View>: View {
     let trailingButtonAction: () -> Void
     var imageTint: Color = Color.background
     let backgroundColor: Color
+    var isBorderButton: Bool = false
     @ViewBuilder var content: Content
     
     var body: some View {
@@ -21,22 +22,26 @@ struct CustomNavigationBar<Content: View>: View {
             VStack(spacing: 0) {
                 HStack {
                     if(leadingButtonImage != nil) {
-                        Button(action: leadingButtonAction) {
-                            Image(systemName: leadingButtonImage!)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(maxWidth: 24, maxHeight: 24)
-                                .foregroundColor(imageTint)
+                        if(isBorderButton) {
+                            RoundButton(onClick: leadingButtonAction) {
+                                IconImage(imageName: leadingButtonImage!, imageTint: imageTint)
+                            }
+                        } else {
+                            Button(action: leadingButtonAction) {
+                                IconImage(imageName: leadingButtonImage!, imageTint: imageTint)
+                            }
                         }
                     }
                     Spacer()
                     if(trailingButtonImage != nil) {
-                        Button(action: trailingButtonAction) {
-                            Image(systemName: trailingButtonImage!)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(maxWidth: 24, maxHeight: 24)
-                                .foregroundColor(imageTint)
+                        if(isBorderButton) {
+                            RoundButton(onClick: trailingButtonAction) {
+                                IconImage(imageName: trailingButtonImage!, imageTint: imageTint)
+                            }
+                        } else {
+                            Button(action: trailingButtonAction) {
+                                IconImage(imageName: trailingButtonImage!, imageTint: imageTint)
+                            }
                         }
                     }
                 }
@@ -46,6 +51,19 @@ struct CustomNavigationBar<Content: View>: View {
         }
         .frame(maxWidth: .infinity)
         .background(backgroundColor)
+    }
+}
+
+private struct IconImage: View {
+    let imageName: String
+    let imageTint: Color
+    
+    var body: some View {
+        Image(systemName: imageName)
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(maxWidth: 24, maxHeight: 24)
+            .foregroundColor(imageTint)
     }
 }
 

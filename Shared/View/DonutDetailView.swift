@@ -17,8 +17,9 @@ struct DonutDetailView: View {
             leadingButtonAction: router.pop,
             trailingButtonImage: ImageManager.heartFill,
             trailingButtonAction: {},
-            imageTint: Color.accent,
-            backgroundColor: Color.secondaryColor) {
+            imageTint: Color.onBackgroundVariantLight,
+            backgroundColor: Color.secondaryColor,
+            isBorderButton: true) {
                 DonutDetailContent(donut: donut)
             }
     }
