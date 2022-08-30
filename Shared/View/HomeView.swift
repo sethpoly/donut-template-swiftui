@@ -171,9 +171,9 @@ private struct ItemCard: View {
         .background(Color.foreground)
         .cornerRadius(CGFloat.medium)
         .shadow(color: .gray, radius: 3, x: -2, y: 2)
-//        .onTapGesture {
-//            onDonutClick()
-//        }
+        .onTapGesture {
+            onDonutClick()
+        }
     }
 }
 
