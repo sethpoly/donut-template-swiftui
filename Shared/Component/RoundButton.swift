@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RoundButton<Content: View>: View {
     let onClick: () -> Void
-    let backgroundColor: Color = Color.white
+    var backgroundColor: Color = Color.white
     @ViewBuilder var content: Content
     
     var body: some View {

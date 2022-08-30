@@ -8,11 +8,21 @@
 import SwiftUI
 
 struct CartView: View {
+    let router: Router
+    
     @ObservedObject var cartViewModel = CartViewModel()
     var body: some View {
-        CartViewContent(
-            items: cartViewModel.donuts
-        )
+        CustomNavigationBar(
+            leadingButtonImage: ImageManager.arrowLeft,
+            leadingButtonAction: router.pop,
+            trailingButtonImage: nil,
+            trailingButtonAction: {},
+            imageTint: Color.onBackground,
+            backgroundColor: Color.background) {
+                CartViewContent(
+                    items: cartViewModel.donuts
+                )
+            }
     }
 }
 
@@ -22,19 +32,6 @@ private struct CartViewContent: View {
         GeometryReader { metrics in
             ZStack {
                 VStack {
-                    // Close button
-                    HStack {
-                        Button(action: {/*TODO: Close sheet*/}) {
-                            Image(systemName: ImageManager.xmark)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(maxWidth: 20, maxHeight: 20)
-                                .foregroundColor(Color.onBackground)
-                        }
-                    }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    Spacer()
-                    
                     CartHeader(
                         title: "My Cart",
                         subtitle: "\(items.count) items"

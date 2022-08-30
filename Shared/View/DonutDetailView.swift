@@ -8,8 +8,20 @@
 import SwiftUI
 
 struct DonutDetailView: View {
+    let router: Router
+    let donut: Donut
+    
     var body: some View {
-        DonutDetailContent(donut: Donut(name: "", price: "", imageName: ""))
+        CustomNavigationBar(
+            leadingButtonImage: ImageManager.arrowLeft,
+            leadingButtonAction: router.pop,
+            trailingButtonImage: ImageManager.heartFill,
+            trailingButtonAction: {},
+            imageTint: Color.onBackgroundVariantLight,
+            backgroundColor: Color.secondaryColor,
+            isBorderButton: true) {
+                DonutDetailContent(donut: donut)
+            }
     }
 }
 
@@ -59,13 +71,13 @@ private struct DonutDetailContent: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.background)
-            .customNavigationBar(
-                leadingButtonImage: ImageManager.arrowLeft,
-                leadingButtonAction: {/*TODO:*/},
-                trailingButtonImage: ImageManager.heartFill,
-                trailingButtonAction: {/*TODO:*/},
-                imageTint: .onBackgroundVariantLight
-            )
+//            .customNavigationBar(
+//                leadingButtonImage: ImageManager.arrowLeft,
+//                leadingButtonAction: {/*TODO:*/},
+//                trailingButtonImage: ImageManager.heartFill,
+//                trailingButtonAction: {/*TODO:*/},
+//                imageTint: .onBackgroundVariantLight
+//            )
         }
     }
 }
