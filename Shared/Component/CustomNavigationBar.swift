@@ -12,7 +12,7 @@ struct CustomNavigationBar<Content: View>: View {
     let leadingButtonAction: () -> Void
     let trailingButtonImage: String?
     let trailingButtonAction: () -> Void
-    let imageTint: Color = Color.background
+    var imageTint: Color = Color.background
     let backgroundColor: Color
     @ViewBuilder var content: Content
     

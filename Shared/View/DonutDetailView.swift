@@ -12,7 +12,15 @@ struct DonutDetailView: View {
     let donut: Donut
     
     var body: some View {
-        DonutDetailContent(donut: donut)
+        CustomNavigationBar(
+            leadingButtonImage: ImageManager.arrowLeft,
+            leadingButtonAction: router.pop,
+            trailingButtonImage: ImageManager.heartFill,
+            trailingButtonAction: {},
+            imageTint: Color.accent,
+            backgroundColor: Color.secondaryColor) {
+                DonutDetailContent(donut: donut)
+            }
     }
 }
 

@@ -21,7 +21,15 @@ class Router {
         self.navStack.push(DonutDetailView(router: self, donut: donut))
     }
     
+    func toCart() {
+        self.navStack.push(CartView(router: self))
+    }
+    
     func toHome() {
         self.navStack.push(HomeView(router: self))
+    }
+    
+    func pop() {
+        self.navStack.pop()
     }
 }

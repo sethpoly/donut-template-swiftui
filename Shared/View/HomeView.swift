@@ -16,7 +16,7 @@ struct HomeView: View {
             leadingButtonImage: ImageManager.hamburgerMenu,
             leadingButtonAction: {},
             trailingButtonImage: ImageManager.cart,
-            trailingButtonAction: {},
+            trailingButtonAction: router.toCart,
             backgroundColor: Color.accent) {
             HomeContent(
                 donuts: homeViewModel.donuts,
