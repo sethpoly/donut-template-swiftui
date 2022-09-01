@@ -30,54 +30,41 @@ private struct DonutDetailContent: View {
     
     var body: some View {
         GeometryReader { metrics in
-            ZStack {
-                VStack(spacing: 0) {
-                    // TODO: Button Row - Nav bar
-                    // ->
+            ContainerWithPinnedBottomView(pinnedView: {
+                // Bottom cart buttons/info
+                HStack {
+                    QuantityButton()
+                        .frame(maxWidth: metrics.size.width * 0.33)
                     
-                    ScrollView {
+                    // Add to cart
+                    AccentButton(
+                        text: "Add To Cart",
+                        onClick: {}
+                    )
+                }
+                .padding()
+                .frame(maxWidth: .infinity,  alignment: .leading)
+                .background(Color.background)
+            }) {
+                ScrollView {
+                    VStack(spacing: 0) {
                         // Image - donut
                         ZStack {
                             Image(donut.imageName)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(maxWidth: .infinity, maxHeight: .infinity)
                         }
                         .padding()
                         .frame(maxWidth: .infinity, maxHeight: metrics.size.height * 0.45)
                         .background(Color.secondaryColor.ignoresSafeArea())
-                        
+                    
                         // Bottom sheet with details of donut
                         DonutDetailContainer(donut: donut)
                     }
-
-                    
-                    // Bottom cart buttons/info
-                    HStack {
-                        QuantityButton()
-                            .frame(maxWidth: metrics.size.width * 0.33)
-                        
-                        // Add to cart
-                        AccentButton(
-                            text: "Add To Cart",
-                            onClick: {}
-                        )
-                    }
-                    .padding()
-                    .frame(maxWidth: .infinity,  alignment: .leading)
-                    .background(Color.background)
                 }
-                .background(Color.secondaryColor)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(Color.background)
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color.background)
-//            .customNavigationBar(
-//                leadingButtonImage: ImageManager.arrowLeft,
-//                leadingButtonAction: {/*TODO:*/},
-//                trailingButtonImage: ImageManager.heartFill,
-//                trailingButtonAction: {/*TODO:*/},
-//                imageTint: .onBackgroundVariantLight
-//            )
         }
     }
 }
@@ -128,7 +115,7 @@ private struct DonutDetailContainer: View {
             }
         }
         .padding()
-        .frame(maxWidth: .infinity,  alignment: .leading)
+        .frame(maxWidth: .infinity, maxHeight: .infinity,  alignment: .leading)
         .background(Color.background)
         .cornerRadius(CGFloat.large, corners: [.topLeft, .topRight])
     }
